@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context>
+	<Resource 
+		name="jdbc/jspbeginner"
+		auth="Container"
+		type="javax.sql.DataSource"
+		username="jspid"
+		password="jsppass"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		url="jdbc:mysql://localhost:3306/jspbeginner?autoReconnect=true&amp;serverTimezone=UTC"
+	/>
+</Context>
