@@ -14,6 +14,32 @@ public class QuestionBean {
 	private int re_step;
 	private Date question_date;
 	
+	public QuestionBean(){}
+	public QuestionBean(int question_num,
+						String question_Email,
+						String question_title,
+						String question_context,
+						String question_comment,
+						int re_ref,
+						int re_lev,
+						int re_step,
+						Date question_date) {
+		this.question_num =question_num;
+		this.question_Email =question_Email;
+		this.question_title =question_title;
+		this.question_context =question_context;
+		this.question_comment =question_comment;
+		this.re_ref =re_ref;
+		this.re_lev =re_lev;
+		this.re_step=re_step;
+		this.question_date =question_date;
+		
+	}
+	
+	
+	
+	
+	
 	public int getQuestion_num() {
 		return question_num;
 	}

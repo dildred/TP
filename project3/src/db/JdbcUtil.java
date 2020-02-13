@@ -48,6 +48,16 @@ public class JdbcUtil {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void commit(Connection con) {
+		try {
+			con.commit();
+			System.out.println("Commit Success");
+		} catch (Exception e) {
+			System.out.println("Commit err:" + e);
+			e.printStackTrace();
+		}
+	}
 
 	
 	

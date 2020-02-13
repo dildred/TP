@@ -8,6 +8,15 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath }/question/css/inquiry.css">
 </head>
 <body>
+	<nav id="sub_menu">
+		<ul>
+			<li><a href="../question/question.jsp">고객센터</a></li>
+			<li><a href="../question/inquiry.jsp">1:1문의하기</a></li>
+			<li><a href="#">신고하기</a></li>
+			<li><a href="../question/myquestion.jsp">내 문의 내역</a></li>
+			<li><a href="#">내 신고 내역?</a></li>
+		</ul>
+	</nav>
 	<article>
 		<div class="inquiry_wrap">
 			<div class="inquiry_input">
@@ -17,7 +26,7 @@
 						<tr>
 							<th>작성자</th>
 							<td>
-								<input type="text" id="writer" name="writer">
+								<input type="text" id="Email" name="Email">
 							</td>
 						</tr>
 						<tr>
