@@ -16,7 +16,14 @@
 	<article>
 		<h1 align="center" style="font-size: 45px;">무엇을 도와 드릴까요?</h1>
 	</article>
-
+	<nav id="sub_menu">
+		<ul>
+			<li><a href="../question/inquiry.jsp">1:1문의하기</a></li>
+			<li><a href="#">신고하기</a></li>
+			<li><a href="#">내 문의 내역</a></li>
+			<li><a href="#">내 신고 내역?</a></li>
+		</ul>
+	</nav>
 	<table>
 		<thead>
 			<tr>
@@ -39,17 +46,18 @@
 					<%
 						if (articleList.get(i).getRe_lev() > 0) {
 					%>
+					
 					<%
 					 	for (int j = 1; j < articleList.get(i).getRe_lev(); j++) {
 					%>
-										<img
-										src="${pageContext.request.contextPath}/images/reply/blank.gif"
-										alt="화살표이미지"> 
+									<img
+									src="${pageContext.request.contextPath}/images/reply/blank.gif"
+									alt="화살표이미지"> 
 					<%
 					 	}
-					 %> <img
-										src="${pageContext.request.contextPath}/images/reply/arrow.png"
-										alt="화살표이미지"> 
+					 %> 			<img
+									src="${pageContext.request.contextPath}/images/reply/arrow.png"
+									alt="화살표이미지"> 
 					<%} %>
 					<%=articleList.get(i).getQuestion_title()%></td>
 				<td class="writer"><%=articleList.get(i).getQuestion_Email()%></td>
@@ -97,9 +105,6 @@
 			}
 		%>
 	</div>
-</div>
-<div class="writing">
-	<input type="button" value="글쓰기">
 </div>
 </article>
 
