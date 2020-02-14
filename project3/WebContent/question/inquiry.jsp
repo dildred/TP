@@ -21,7 +21,7 @@
 		<div class="inquiry_wrap">
 			<div class="inquiry_input">
 				<h1 align="center">1:1 문의하기</h1>
-				<form action="${pageContext.request.contextPath}/inquiryPro.do" method="post" id="inquiry_form">
+				<form action="${pageContext.request.contextPath}/questionWritePro.do" method="post" id="questionWrite_form">
 					<table>
 						<tr>
 							<th>작성자</th>
@@ -43,13 +43,13 @@
 						<tr>
 							<th>문의제목</th>
 							<td>
-								<input type="text" id="subject" name="subject">
+								<input type="text" id="title" name="title">
 							</td>
 						</tr>
 						<tr>
 							<th>내용</th>
 							<td>
-								<textarea rows="30" cols="10" id="content" name="content"></textarea>
+								<textarea rows="30" cols="10" id="comment" name="comment"></textarea>
 							</td>
 						</tr>
 					</table>

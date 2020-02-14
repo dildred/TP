@@ -2,21 +2,20 @@ package controller;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.question.QuestionListAction;
 import action.question.QuestionWriteProAction;
 import vo.ActionForward;
 
 @WebServlet("*.do")
 public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 
-	
-	
-	
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -45,7 +44,25 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 			}
 		}
 		
-	}
+		if(forward != null) {
+			
+			if(forward.isRedirect()) {
+				response.sendRedirect(forward.getPath());
+			}else {
+				System.out.println("µð½ºÆÐÄ¡ ¿À·ù");
+				RequestDispatcher dispatcher=request.getRequestDispatcher(forward.getPath());
+				dispatcher.forward(request, response);
+			}
+		}else {
+			String jsonInfo = (String)request.getAttribute("jsonInfo");
+			response.getWriter().print(jsonInfo);
+			System.out.println(jsonInfo);
+		}
+		
+		
+		
+		
+	}//doProcess ²ý
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -60,4 +77,4 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 	
 	
 	
-}
+}//QuestionForntController ²ý

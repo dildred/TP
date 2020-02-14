@@ -3,8 +3,8 @@ package svc.question;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-import dao.BoardDAO;
-import vo.BoardBean;
+
+import dao.QuestionDAO;
 import vo.PageInfo;
 import vo.QuestionBean;
 
@@ -16,7 +16,7 @@ public class QuestionService {
 	public int getListCount() throws Exception{
 		int listCount =0;
 		Connection con = getConnection();
-		QuestionDAO questionDAO = getConnection();
+		QuestionDAO questionDAO = QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
 		listCount = questionDAO.selectListCount();
 		close(con);
@@ -67,7 +67,7 @@ public class QuestionService {
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
-		QuestionBean bean = questionDAO.contentLookUP(num);
+		QuestionBean bean = questionDAO.contentLookUp(num);
 		close(con);
 		
 		return bean;
@@ -79,7 +79,7 @@ public class QuestionService {
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
-		QuestionBean bean = questionDAO.contentLookUP(num);
+		QuestionBean bean = questionDAO.contentLookUp(num);
 		close(con);
 		
 		return bean;
@@ -106,7 +106,7 @@ public class QuestionService {
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
-		int isertCount = boardDAO.updateModifyArticle(questionBean);
+		int insertCount = questionDAO.updateModifyArticle(questionBean);
 		
 		if(insertCount >0) isModifySuccess = true;
 		
@@ -122,8 +122,8 @@ public class QuestionService {
 		QuestionDAO questionDAO = QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
 
-		if("subject".equals(choice)) articleList = questionDAO.subjectSearchList(input);
-		else if("board_name".equals(choice)) articleList = questionDAO.nameSearchList(input);
+		if("title".equals(choice)) articleList = questionDAO.titleSearchList(input);
+		else if("question_Email".equals(choice)) articleList = questionDAO.titleSearchList(input);
 		
 		close(con);
 		
@@ -138,8 +138,8 @@ public class QuestionService {
 		QuestionDAO questionDAO = QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
 		
-		if("subject".equals(choice)) pageInfo = questionDAO.subjectSearchCount(input);
-		else if("board_name".equals(choice)) pageInfo = questionDAO.nameSearchCount(input);
+		if("title".equals(choice)) pageInfo = questionDAO.subjectSearchCount(input);
+		else if("question_Eamil".equals(choice)) pageInfo = questionDAO.nameSearchCount(input);
 		
 		return pageInfo;
 	}
