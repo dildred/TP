@@ -54,7 +54,7 @@
 						</tr>
 					</table>
 					<div class="inquiry_button">
-						<input class="button" id="inquiry_submit" type="button" value="등록">
+						<input class="button" id="inquiry_submit" type="submit" value="등록">
 						<input class="button" type="reset" value="다시쓰기">
 						<input class="button" type="button" value="목록" onclick="javascript:history.go(-1)">
 					</div>
