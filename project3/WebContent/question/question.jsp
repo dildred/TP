@@ -15,7 +15,7 @@
 <body>
 	<article>
 		<h1 align="center" style="font-size: 45px;">무엇을 도와 드릴까요?</h1>
-	</article>
+	
 	<nav id="sub_menu">
 		<ul>
 			<li><a href="../question/question.jsp">고객센터</a></li>
@@ -25,8 +25,16 @@
 			<li><a href="#">내 신고 내역?</a></li>
 		</ul>
 	</nav>
+	<div class="count_search_block">
+		<div class="count">
+		<%if(pageInfo != null){ %>
+			<input type="hidden" value="<%=pageInfo.getMaxPage() %>">
+			<span style="font-size: 18px;">[ 총 게시글 수 : <b><%=pageInfo.getListCount() %></b> ]</span>
+		<%} %>
+		</div>
+	</div>
 	<table>
-		<thead>
+		<thead> 
 			<tr>
 				<th class="num">번호</th>
 				<th class="subejct">제목</th>
@@ -64,47 +72,27 @@
 				<td class="writer"><%=articleList.get(i).getQuestion_Email()%></td>
 				<td class="date"><%=articleList.get(i).getQuestion_date()%></td>
 			</tr>
-			<%}	%>
-
-		</tbody>
-	</table>
-
-
-
-</body>
-</html>
-<%
-	} else {
-%>
+			<%}%>
+	<%}else{%>
 <tr>
 	<td align="center" colspan="5">등록된 게시글이 없습니다.</td>
 </tr>
-<%
-	}
-%>
-</tbody>
+<%}%>
+	</tbody>
 </table>
 <div class="page">
 	<div class="pagebtn">
-		<%
-			if (articleList != null) {
-		%>
+		<%if (articleList != null) {%>
 		<%-- <%if(pageInfo.getPage() > 1){ %> --%>
-		<input name="<%=pageInfo.getPage()%>" type="button" value="<">
+			<input name="<%=pageInfo.getPage()%>" type="button" value="<">
 		<%-- <%}%> --%>
-		<%
-			for (int i = 0; i < pageInfo.getMaxPage(); i++) {
-		%>
-		<input name="<%=pageInfo.getPage()%>" type="button" value="<%=i + 1%>">
-		<%
-			}
-		%>
+		<%for (int i = 0; i < pageInfo.getMaxPage(); i++) {	%>
+			<input name="<%=pageInfo.getPage()%>" type="button" value="<%=i + 1%>">
+		<%}	%>
 		<%-- <%if(pageInfo.getPage() != pageInfo.getMaxPage()){ %> --%>
-		<input name="<%=pageInfo.getPage()%>" type="button" value=">">
+			<input name="<%=pageInfo.getPage()%>" type="button" value=">">
 		<%-- <%}%> --%>
-		<%
-			}
-		%>
+		<%}	%>
 	</div>
 </div>
 </article>

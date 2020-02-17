@@ -19,17 +19,19 @@ public class QuestionWriteProAction implements Action{
 		QuestionBean questionBean = null;
 		
 		String Email = request.getParameter("Email");
-		String subject = request.getParameter("subject");
-		String content = request.getParameter("content");
+		String title = request.getParameter("title");
+		String comment = request.getParameter("comment");
+		String context = request.getParameter("context");
 		
 		questionBean = new QuestionBean();
 		questionBean.setQuestion_Email(Email);
-		questionBean.setQuestion_title(subject);
-		questionBean.setQuestion_comment(content);
+		questionBean.setQuestion_title(title);
+		questionBean.setQuestion_context(context);
+		questionBean.setQuestion_comment(comment);
 		
 		QuestionService questionService = new QuestionService();
 		boolean isWriteSuccess = questionService.registArticle(questionBean);
-		
+		System.out.println("∂Û¿Ã∆Æ1");
 		if(!isWriteSuccess) {
 			response.setContentType("text/html);charset=utf-8");
 			PrintWriter out =response.getWriter();

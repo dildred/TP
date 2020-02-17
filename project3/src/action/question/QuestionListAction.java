@@ -27,6 +27,7 @@ public class QuestionListAction implements Action{
 			page = Integer.parseInt(request.getParameter("page"));
 			
 		}
+		
 		QuestionService questionService = new QuestionService();
 		articleList = questionService.getArticleList(page,limit);
 		int listCount = questionService.getListCount();
@@ -52,7 +53,7 @@ public class QuestionListAction implements Action{
 		request.setAttribute("articleList", articleList);
 		
 		forward = new ActionForward();
-		forward.setPath("../question/question.jsp");
+		forward.setPath("/question/question.jsp");
 		forward.setRedirect(false);
 		
 		

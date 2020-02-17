@@ -3,7 +3,6 @@ package svc.question;
 import java.sql.Connection;
 import java.util.ArrayList;
 
-
 import dao.QuestionDAO;
 import vo.PageInfo;
 import vo.QuestionBean;
@@ -14,6 +13,7 @@ public class QuestionService {
 
 	// 총 게시글 수
 	public int getListCount() throws Exception{
+		System.out.println("서비스1");
 		int listCount =0;
 		Connection con = getConnection();
 		QuestionDAO questionDAO = QuestionDAO.getInstance();
@@ -27,7 +27,7 @@ public class QuestionService {
 	
 	//게시글 리스트
 	public ArrayList<QuestionBean> getArticleList(int page, int limit) throws Exception{
-		
+		System.out.println("서비스2");
 		ArrayList<QuestionBean> articleList =null;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
@@ -43,7 +43,7 @@ public class QuestionService {
 	//게시글 저장
 	
 	public boolean registArticle(QuestionBean questionBean) {
-		
+		System.out.println("서비스3");
 		boolean isWriteSuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
@@ -63,7 +63,7 @@ public class QuestionService {
 	//게시글 상세보기(조회수필요없음)
 	
 	public QuestionBean getArticle(int num) {
-		
+		System.out.println("서비스4");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -75,7 +75,7 @@ public class QuestionService {
 	
 	//수정할 게시글 상세 보기
 	public QuestionBean getModifyArticle(int num) {
-		
+		System.out.println("서비스5");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -86,12 +86,25 @@ public class QuestionService {
 		
 	}
 	
-	//비밀번호 필요없음
+	//게시글 비밀번호
+	
+	public String getPass(int num) {
+	
+			Connection con = getConnection();
+			QuestionDAO questionDAO = QuestionDAO.getInstance();
+			questionDAO.setConnection(con);
+			String passwd = questionDAO.getPass(num);
+			
+			close(con);
+			
+			return passwd;
+		}
+	
 	
 	//게시글 삭제
 	
 	public void questionDelete(int num) {
-		
+		System.out.println("서비스6");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -101,7 +114,7 @@ public class QuestionService {
 	}
 	
 	public boolean modifyArticle(QuestionBean questionBean) {
-		
+		System.out.println("서비스7");
 		boolean isModifySuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();

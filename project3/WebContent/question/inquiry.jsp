@@ -31,14 +31,14 @@
 						</tr>
 						<tr>
 							<th scope="row">상담분류</th>
-							<td>
+							 <td>
 								<select style="width:280px; height:30px" title="문의분야 선택" class="select_st">
 									<option value="">뭐</option>
 									<option value="">하</option>
 									<option value="">지</option>
 									<option value="">?</option>
 								</select>
-							</td>
+							</td> 
 						</tr>
 						<tr>
 							<th>문의제목</th>
@@ -63,8 +63,8 @@
 			</div>
 		</div>
 	</article>
-		<script src="${pageContext.request.contextPath}/notice_board/js/jquery-3.4.1.min.js"></script>
-		<script src="${pageContext.request.contextPath}/notice_board/js/writing.js"></script>
+		<script src="${pageContext.request.contextPath}/question/js/jquery-3.4.1.min.js"></script>
+		<script src="${pageContext.request.contextPath}/question/js/writing.js"></script>
 
 </body>
 </html>

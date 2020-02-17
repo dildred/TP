@@ -19,8 +19,9 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/plain");
+		response.setContentType("text/plain;charset=utf-8");
 		String RequestURI = request.getRequestURI();
 		String contextPath = request.getContextPath();
 		String command = RequestURI.substring(contextPath.length());
@@ -28,6 +29,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 		Action action = null;
 		
 		if(command.equals("/questionWritePro.do")) {
+			
 			action = new QuestionWriteProAction();
 			try {
 				forward = action.execute(request, response);
@@ -35,6 +37,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 				System.out.println("/questionWritePro.do err : " +e);
 			}
 		}else if(command.equals("/questionList.do")) {
+			
 			action = new QuestionListAction();
 			try {
 				forward = action.execute(request, response);
@@ -44,7 +47,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 			}
 		}
 		
-		if(forward != null) {
+		if(forward == null) {
 			
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

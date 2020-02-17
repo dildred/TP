@@ -58,20 +58,20 @@ public class QuestionDAO {
 		int insertCount = 0;
 		
 		try {
-			pstmt.getConnection().prepareStatement("select max(board_num) FROM board");
+			pstmt = con.prepareStatement("select max(question_num) FROM question");
 			rs=pstmt.executeQuery();
 			
 			if(rs.next()) num =rs.getInt(1)+1;
 			else num =1;
 			
-			sql ="INSERT INTO question(question_num, "
+			sql ="INSERT INTO question (question_num, "
 								+"question_Email, "
 								+"question_title, "
 								+"question_context, "
 								+"question_comment, "
 								+"re_ref, re_lev, re_step, "
 								+"question_date) "
-					+"VALUES(?,?,?,?,?,?,?,?,new())";			
+					+"VALUES(?,?,?,?,?,?,?,?,now())";			
 			
 			pstmt =con.prepareStatement(sql);
 			pstmt.setInt(1, num);
@@ -99,7 +99,7 @@ public class QuestionDAO {
 	public ArrayList<QuestionBean> selectArticleList(int page, int limit){
 		
 		sql = "SELECT * "
-			+ "FROM project_question "
+			+ "FROM question "
 			+ "ORDER BY re_ref desc, re_step asc "
 			+ "LIMIT ?,10";
 				
@@ -149,7 +149,7 @@ public class QuestionDAO {
 	public QuestionBean contentLookUp(int num) {
 		QuestionBean question = new QuestionBean();
 		try {
-			sql ="SELECT * FROM project_question WHERE question_num = ?";
+			sql ="SELECT * FROM question WHERE question_num = ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			rs = pstmt.executeQuery();
@@ -177,12 +177,29 @@ public class QuestionDAO {
 		
 	}//contentLookUp 끗
 	
-	//비번안함
+	//비번 함
+	public String getPass(int num) {
+		String passwd = null;
+		try {
+			sql = "SELECT question_pass FROM question WHERE question_num = ?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) passwd = rs.getString("question_pass");
+				
+		} catch (Exception e) {
+			System.out.println("getPass(int num) err"+e);
+		} finally {
+			close(rs);
+			close(pstmt);
+		}
+		return passwd;
+	}
 	
 	//게시글 삭제
 	public void questionDelete(int num) {
 		try {
-			sql = "delete from project_question where question_num =? ";
+			sql = "delete from question where question_num =? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();
@@ -198,7 +215,7 @@ public class QuestionDAO {
 		int insertCount = 0;
 		
 		try {
-			sql = "update project_question set question_Email =?, question_title=?, question_context=?, question_comment=? where question_num=?";
+			sql = "update question set question_Email =?, question_title=?, question_context=?, question_comment=? where question_num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, questionBean.getQuestion_Email());
 			pstmt.setString(2, questionBean.getQuestion_title()); 
@@ -224,7 +241,7 @@ public class QuestionDAO {
 		QuestionBean article= null;
 		try {
 			sql = "select question_num, question_Email, question_title, question_context, question_comment, re_ref, re_lev, re_step "
-				+ "FROM project_question "
+				+ "FROM question "
 				+ "WHERE question_Email like ? "
 				+ "ORDER BY question_num desc";
 			pstmt = con.prepareStatement(sql);
@@ -260,7 +277,7 @@ public class QuestionDAO {
 	public PageInfo subjectSearchCount(String input) {
 		PageInfo pageInfo = new PageInfo();
 		try {
-			pstmt = con.prepareStatement("SELECT count(*) FROM project_question WHERE question_title like ? ");
+			pstmt = con.prepareStatement("SELECT count(*) FROM question WHERE question_title like ? ");
 			pstmt.setString(1, "%"+input+"%");
 			rs = pstmt.executeQuery();
 			
@@ -279,7 +296,7 @@ public class QuestionDAO {
 	public PageInfo nameSearchCount(String input) {
 		PageInfo pageInfo = new PageInfo();
 		try {
-			pstmt = con.prepareStatement("select count(*) from project_question where question_Email like ? ");
+			pstmt = con.prepareStatement("select count(*) from question where question_Email like ? ");
 			pstmt.setString(1, "%" + input + "%");
 			rs = pstmt.executeQuery();
 			
