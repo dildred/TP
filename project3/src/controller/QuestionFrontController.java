@@ -9,7 +9,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
+import action.question.QuestionDeleteAction;
 import action.question.QuestionListAction;
+import action.question.QuestionModifyAction;
+import action.question.QuestionModifyProAction;
+import action.question.QuestionReplyAction;
+import action.question.QuestionSearchAction;
 import action.question.QuestionWriteProAction;
 import vo.ActionForward;
 
@@ -46,9 +51,59 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 			} catch (Exception e) {
 				System.out.println("/questionList.do err :" +e);
 			}
+		}else if(command.equals("/questionModify.do")) {
+			action = new QuestionModifyAction();
+			try {
+				forward = action.execute(request, response);
+				System.out.println("forward");
+			} catch (Exception e) {
+				System.out.println("/questionModify.do err : " + e);
+			}
+		}else if(command.equals("/questionDetail.do" )) {
+			try {
+				forward = action.execute(request, response);
+				System.out.println();
+			} catch (Exception e) {
+				System.out.println("/questionDetail.do err : " + e);
+			}
+		}else if(command.equals("/questionDelete.do")) {
+			action = new QuestionDeleteAction();
+			try {
+				forward =action.execute(request, response);
+				System.out.println("forward");
+			} catch (Exception e) {
+				System.out.println("/questionDelete.do err : " +e);
+			}
+		}else if(command.equals("/questionReply.do")) {
+			action = new QuestionReplyAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("/questionReply.do err : " +e);
+			}
+		}else if(command.equals("/questionModifyPro.bo")){
+			
+			action = new QuestionModifyProAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("/questionModifyPro.bo err : "+e);
+			}
+			
+		}else if(command.equals("/questionSearch.bo")){
+			
+			action = new QuestionSearchAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("/questionSearch.bo err : "+e);
+			}
+			
 		}
 		
-		if(forward == null) {
+		
+		
+		if(forward != null) {
 			
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());

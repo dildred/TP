@@ -37,8 +37,8 @@
 		<thead>
 			<tr>
 				<th class="num">번호</th>
-				<th class="title">제목</th>
 				<th class="Email">작성자</th>
+				<th class="title">제목</th>
 				<th class="date">작성일</th>
 			</tr>
 		</thead>
