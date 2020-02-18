@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% QuestionBean article = (QuestionBean)request.getAttribute("article"); %>
-<% String user_id = (String)session.getAttribute("user_id"); %>    
+<% String Email = (String)session.getAttribute("Email"); %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +13,7 @@
 <body>
 	<article>
 		<div class="post_block">
-		<%if(article.getRe_lev()==0){ %>
+		<%if(article.getRe_lev() == 0){ %>
 			<h1 align="center">문의글</h1>
 		<%} else{ %>
 			<h1 align="center">답글</h1>

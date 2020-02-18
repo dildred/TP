@@ -22,38 +22,30 @@ public class QuestionListAction implements Action{
 		ArrayList<QuestionBean> articleList =new ArrayList<QuestionBean>();
 		int page = 1;
 		int limit = 10;
-		
+		System.out.println(1);
 		if(request.getParameter("page") != null) {
 			page = Integer.parseInt(request.getParameter("page"));
 			
 		}
-		
+		System.out.println(2);
 		QuestionService questionService = new QuestionService();
 		articleList = questionService.getArticleList(page,limit);
 		int listCount = questionService.getListCount();
-		
+		System.out.println(3);
 		//총 페이지 수
 		int maxPage = (int)((double) listCount/limit + 0.95);
 		
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setPage(page);
 		pageInfo.setMaxPage(maxPage);
+		
 		pageInfo.setListCount(listCount);
-		
-		if("ajax".equals(request.getParameter("Handler"))) {//비동기 요청일때
-			
-			ajax = new AjaxAction();
-			String jsonInfo = ajax.jsonList(articleList, pageInfo);
-			request.setAttribute("jsonInfo", jsonInfo);
-			
-			return forward;
-		}
-		
+		System.out.println(4);
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("articleList", articleList);
-		
+		System.out.println(5);
 		forward = new ActionForward();
-		forward.setPath("/question/question.jsp");
+		forward.setPath("../question/question.jsp");
 		forward.setRedirect(false);
 		
 		

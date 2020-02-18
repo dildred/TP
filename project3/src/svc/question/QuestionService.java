@@ -58,7 +58,25 @@ public class QuestionService {
 	}
 	
 	
-	//답글 저장 필요없음
+	//답글 저장
+	
+	public boolean replyArticle(QuestionBean questionBean) {
+		
+		boolean isReplySuccess=false;
+		Connection con = getConnection();
+		QuestionDAO questionDAO = QuestionDAO.getInstance();
+		questionDAO.setConnection(con);
+		int insertCount = questionDAO.insertReplyArticle(questionBean);
+		
+		if(insertCount > 0) isReplySuccess = true;
+		
+		close(con);
+		
+		return isReplySuccess;
+	}
+	
+	
+	
 	
 	//게시글 상세보기(조회수필요없음)
 	
@@ -128,7 +146,7 @@ public class QuestionService {
 		return isModifySuccess;
 		
 	}
-	public ArrayList<QuestionBean> boardSearch(String choice, String input) {
+	public ArrayList<QuestionBean> questionSearch(String choice, String input) {
 
 		ArrayList<QuestionBean> articleList = null;
 		Connection con = getConnection();

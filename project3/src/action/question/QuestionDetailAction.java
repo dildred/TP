@@ -8,7 +8,7 @@ import svc.question.QuestionService;
 import vo.ActionForward;
 import vo.QuestionBean;
 
-public class QuestionDetailAuction implements Action {
+public class QuestionDetailAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {

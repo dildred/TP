@@ -94,7 +94,63 @@ public class QuestionDAO {
 		return insertCount;
 	}
 	
-	//답글안함
+	//답글등록
+		public int insertReplyArticle(QuestionBean questionBean) {
+			
+			int num = 0;
+			int insertCount = 0;
+			
+			int re_ref = questionBean.getRe_ref();
+			int re_lev = questionBean.getRe_lev();
+			int re_step = questionBean.getRe_step();
+			
+			try {
+				pstmt = con.prepareStatement("SELECT max(question_num) FROM question");
+				rs = pstmt.executeQuery();
+				
+				if(rs.next()) num = rs.getInt(1)+1;
+				else num = 1;
+				
+				sql = "UPDATE question SET re_step=re_step+1 WHERE re_ref=? and re_step>?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, re_ref);
+				pstmt.setInt(2, re_step);
+				pstmt.executeUpdate();
+				
+				re_step += 1;
+				re_lev += 1;
+				
+				sql = "INSERT INTO question(QUESTION_NUM, "
+						  + "QUESTION_EMAIL, "
+						  + "QUESTION_TITLE, "
+						  + "QUESTION_CONTEXT, "
+						  + "QUESTION_COMMENT, "
+						  + "RE_REF, RE_LEV, RE_STEP, "
+						  + "QUESTION_DATE) "
+					+ "VALUES(?,?,?,?,?,?,?,?,now())";
+				
+				pstmt = con.prepareStatement(sql);
+				pstmt.setInt(1, num); 
+				pstmt.setString(2, questionBean.getQuestion_Email()); 
+				pstmt.setString(3, questionBean.getQuestion_title()); 
+				pstmt.setString(4, questionBean.getQuestion_context());
+				pstmt.setString(5, questionBean.getQuestion_comment()); 
+				pstmt.setInt(6, re_ref); 
+				pstmt.setInt(7, re_lev); 
+				pstmt.setInt(8, re_step);
+				insertCount = pstmt.executeUpdate();
+				
+			} catch (Exception e) {
+				System.out.println("insertReplyArticle err : "+e);
+			} finally {
+				close(pstmt);
+				close(rs);
+			}
+			return insertCount;
+		}
+	
+	
+	
 	
 	public ArrayList<QuestionBean> selectArticleList(int page, int limit){
 		

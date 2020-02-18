@@ -27,7 +27,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-		
+		System.out.println(3);
 		if(command.equals("/questionWritePro.do")) {
 			
 			action = new QuestionWriteProAction();
@@ -36,8 +36,9 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 			} catch (Exception e) {
 				System.out.println("/questionWritePro.do err : " +e);
 			}
+			System.out.println(1);
 		}else if(command.equals("/questionList.do")) {
-			
+			System.out.println(2);
 			action = new QuestionListAction();
 			try {
 				forward = action.execute(request, response);
