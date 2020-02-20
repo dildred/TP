@@ -15,6 +15,7 @@ import action.question.QuestionModifyAction;
 import action.question.QuestionModifyProAction;
 import action.question.QuestionReplyAction;
 import action.question.QuestionSearchAction;
+import action.question.QuestionWriteAction;
 import action.question.QuestionWriteProAction;
 import vo.ActionForward;
 
@@ -34,7 +35,16 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 		ActionForward forward = null;
 		Action action = null;
 		
-		if(command.equals("/questionWritePro.do")) {
+		if(command.equals("/questionWrite.do")) {
+			
+			action = new QuestionWriteAction();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				System.out.println("/questionWritePro.do err : " +e);
+			}
+			
+		}else if(command.equals("/questionWritePro.do")) {
 			
 			action = new QuestionWriteProAction();
 			try {
@@ -82,22 +92,22 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 			} catch (Exception e) {
 				System.out.println("/questionReply.do err : " +e);
 			}
-		}else if(command.equals("/questionModifyPro.bo")){
+		}else if(command.equals("/questionModifyPro.do")){
 			
 			action = new QuestionModifyProAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				System.out.println("/questionModifyPro.bo err : "+e);
+				System.out.println("/questionModifyPro.do err : "+e);
 			}
 			
-		}else if(command.equals("/questionSearch.bo")){
+		}else if(command.equals("/questionSearch.do")){
 			
 			action = new QuestionSearchAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
-				System.out.println("/questionSearch.bo err : "+e);
+				System.out.println("/questionSearch.do err : "+e);
 			}
 			
 		}

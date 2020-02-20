@@ -3,7 +3,7 @@ $(function() {
 
 	//페이지에 맞는 리스트 보기
 	$('.writing input').click(function() {
-		var fullurl = URL+"question/inquiry.jsp";
+		var fullurl = URL+"question/question.jsp";
 		
 		window.location.href = fullurl;
 	});

@@ -19,6 +19,7 @@ public class QuestionWriteProAction implements Action{
 		QuestionBean questionBean = null;
 		
 		String Email = request.getParameter("Email");
+		System.out.println(Email);
 		String title = request.getParameter("title");
 		String comment = request.getParameter("comment");
 		String context = request.getParameter("context");
@@ -31,8 +32,11 @@ public class QuestionWriteProAction implements Action{
 		
 		QuestionService questionService = new QuestionService();
 		boolean isWriteSuccess = questionService.registArticle(questionBean);
+		
 		System.out.println("∂Û¿Ã∆Æ1");
+		
 		if(!isWriteSuccess) {
+			
 			response.setContentType("text/html);charset=utf-8");
 			PrintWriter out =response.getWriter();
 			

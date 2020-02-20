@@ -25,11 +25,6 @@ public class QuestionDeleteAction implements Action{
 		String passwd = questionService.getPass(Question_num);
 		System.out.println(passwd);
 		
-		/* ¾È¾²³ª?
-		 * if("ajax".equals(request.getParameter("Handler"))){
-		 * 
-		 * }
-		 */
 		
 		if(passwd.equals(input)) {
 			questionService.questionDelete(Question_num);
