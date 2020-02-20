@@ -90,7 +90,7 @@ public class QuestionDAO {
 		} catch (Exception e) {
 			System.out.println("insertArticle err : " +e);
 		}finally {
-			close(pstmt); //import static db.JdbcUtil.*; 왜 이거 임포트 못하고 일일히 작성해야하냐 불편
+			close(pstmt);
 			close(rs);
 		}
 		return insertCount;
@@ -263,7 +263,7 @@ public class QuestionDAO {
 			pstmt.executeUpdate();
 			
 		} catch (Exception e) {
-			System.out.println("boardDelete(int num) err"+e);
+			System.out.println("questionDelete(int num) err"+e);
 		} finally {
 			close(pstmt);
 		}

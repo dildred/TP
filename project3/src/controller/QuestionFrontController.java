@@ -73,7 +73,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 		}else if(command.equals("/questionDetail.do" )) {
 			try {
 				forward = action.execute(request, response);
-				System.out.println();
+				System.out.println("forward");
 			} catch (Exception e) {
 				System.out.println("/questionDetail.do err : " + e);
 			}

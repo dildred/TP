@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionReplyService;
 import vo.ActionForward;
 import vo.QuestionBean;
 
@@ -40,7 +40,7 @@ public class QuestionReplyAction implements Action{
 		questionBean.setQuestion_title(title);
 		questionBean.setQuestion_comment(comment);
 		
-		QuestionService questionService = new QuestionService();
+		QuestionReplyService questionService = new QuestionReplyService();
 		boolean isWriteSuccess = questionService.replyArticle(questionBean);
 		
 		if(!isWriteSuccess){

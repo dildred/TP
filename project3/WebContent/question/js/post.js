@@ -16,7 +16,7 @@ $(function() {
 		
 		if(button == '목록'){
 			
-			var fullurl = URL+"questionList.bo";
+			var fullurl = URL+"questionList.do";
 			window.location.href = fullurl;
 			
 		}else if(button == '답글'){
@@ -26,13 +26,13 @@ $(function() {
 			
 		}else if(button == '수정'){
 
-			var fullurl = URL+"questionModify.bo?question_num="+question_num;
+			var fullurl = URL+"questionModify.do?question_num="+question_num;
 			window.location.href = fullurl;
 			
 		}else if(button == '삭제'){
 			
 			var input = prompt('비밀번호를 입력하세요');
-			var fullurl = URL+"questionDelete.bo";
+			var fullurl = URL+"questionDelete.do";
 			var Info = "&question_num="+question_num+"&input="+input;
 			$.question(fullurl,Info);
 			
@@ -55,7 +55,7 @@ $(function() {
 				if(output == "fail") alert("비밀번호가 다릅니다.");
 				if(output == "success"){
 					alert('삭제 되었습니다.');
-					var fullurl = URL+"questionList.bo";
+					var fullurl = URL+"questionList.do";
 					window.location.href = fullurl;
 				}
 			

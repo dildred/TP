@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionListService;
 import vo.ActionForward;
 import vo.PageInfo;
 import vo.QuestionBean;
@@ -28,7 +28,7 @@ public class QuestionListAction implements Action{
 			
 		}
 		System.out.println(2);
-		QuestionService questionService = new QuestionService();
+		QuestionListService questionService = new QuestionListService();
 		articleList = questionService.getArticleList(page,limit);
 		int listCount = questionService.getListCount();
 		System.out.println(3);

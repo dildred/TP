@@ -4,7 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionDetailService;
 import vo.ActionForward;
 import vo.QuestionBean;
 
@@ -16,7 +16,7 @@ public class QuestionDetailAction implements Action {
 		ActionForward forward = new ActionForward();
 		int num = Integer.parseInt(request.getParameter("num"));
 		
-		QuestionService questionDetailService = new QuestionService();
+		QuestionDetailService questionDetailService = new QuestionDetailService();
 		QuestionBean article = questionDetailService.getArticle(num);
 		
 		

@@ -6,7 +6,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionModifyService;
+import svc.question.QuestionService_1;
 import vo.ActionForward;
 import vo.QuestionBean;
 
@@ -29,7 +30,7 @@ public class QuestionModifyProAction implements Action{
 		questionBean.setQuestion_title(title);
 		questionBean.setQuestion_comment(comment);
 		
-		QuestionService quesionService = new QuestionService();
+		QuestionModifyService quesionService = new QuestionModifyService();
 		boolean isModifySuccess = quesionService.modifyArticle(questionBean);
 		
 		if(!isModifySuccess) {

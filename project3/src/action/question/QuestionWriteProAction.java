@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionWriteService;
 import vo.ActionForward;
 import vo.QuestionBean;
 
@@ -19,7 +19,6 @@ public class QuestionWriteProAction implements Action{
 		QuestionBean questionBean = null;
 		
 		String Email = request.getParameter("Email");
-		System.out.println(Email);
 		String title = request.getParameter("title");
 		String comment = request.getParameter("comment");
 		String context = request.getParameter("context");
@@ -30,14 +29,14 @@ public class QuestionWriteProAction implements Action{
 		questionBean.setQuestion_context(context);
 		questionBean.setQuestion_comment(comment);
 		
-		QuestionService questionService = new QuestionService();
+		QuestionWriteService questionService = new QuestionWriteService();
 		boolean isWriteSuccess = questionService.registArticle(questionBean);
 		
 		System.out.println("∂Û¿Ã∆Æ1");
 		
 		if(!isWriteSuccess) {
 			
-			response.setContentType("text/html);charset=utf-8");
+			response.setContentType("text/html;charset=utf-8");
 			PrintWriter out =response.getWriter();
 			
 			out.print("<script>");

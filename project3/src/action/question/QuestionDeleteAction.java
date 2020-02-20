@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONObject;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionDeleteService;
 import vo.ActionForward;
 
 public class QuestionDeleteAction implements Action{
@@ -21,7 +21,7 @@ public class QuestionDeleteAction implements Action{
 		String input = request.getParameter("input");//ºñ¹øÀÎµ¥ ÀÏµý ³Ö¾îº½
 		System.out.println(input);
 		
-		QuestionService questionService = new QuestionService();
+		QuestionDeleteService questionService = new QuestionDeleteService();
 		String passwd = questionService.getPass(Question_num);
 		System.out.println(passwd);
 		

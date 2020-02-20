@@ -9,7 +9,7 @@ import vo.QuestionBean;
 
 import static db.JdbcUtil.*;
 
-public class QuestionService {
+public class QuestionService_1 {
 
 	// ÃÑ °Ô½Ã±Û ¼ö
 	public int getListCount() throws Exception{

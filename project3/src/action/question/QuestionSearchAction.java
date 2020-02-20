@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.question.AjaxAction;
-import svc.question.QuestionService;
+import svc.question.QuestionSearchService;
 import vo.ActionForward;
 import vo.PageInfo;
 import vo.QuestionBean;
@@ -22,7 +22,7 @@ public class QuestionSearchAction implements Action{
 		String choice = request.getParameter("choice"); //검색 기준
 		String input = request.getParameter("input"); //검색 내용
 		
-		QuestionService questionService = new QuestionService();
+		QuestionSearchService questionService = new QuestionSearchService();
 		ArrayList<QuestionBean> articleList = questionService.questionSearch(choice, input);
 		
 		PageInfo pageInfo = questionService.searchPageInfo(choice, input);//페이지 정보 객체

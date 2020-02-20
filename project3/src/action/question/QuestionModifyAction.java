@@ -4,7 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
-import svc.question.QuestionService;
+import svc.question.QuestionModifyService;
+import svc.question.QuestionService_1;
 import vo.ActionForward;
 import vo.QuestionBean;
 
@@ -17,7 +18,7 @@ public class QuestionModifyAction  implements Action{
 		
 		int num = Integer.parseInt(request.getParameter("question_num")); //수정할 글번호
 		
-		QuestionService questionService = new QuestionService();
+		QuestionModifyService questionService = new QuestionModifyService();
 		QuestionBean article = questionService.getModifyArticle(num);//수정할 게시글정보
 		
 		request.setAttribute("article", article);

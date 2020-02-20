@@ -40,7 +40,7 @@ $(function() {
 			$.ajax({
 				type: "get",
 				async: true,
-				url: URL+"QuestionList.bo?Handler=ajax",
+				url: URL+"questionList.do?Handler=ajax",
 				data: {"page" : page},
 				dataType: "text",
 				success: function(data) {
@@ -97,7 +97,7 @@ $(function() {
 		var num = td.eq(0).text();
 		console.log(num);
 		
-		var fullurl = URL+"boardDetail.bo?num="+num;
+		var fullurl = URL+"questionDetail.do?num="+num;
 		window.location.href = fullurl;
 		
 	});

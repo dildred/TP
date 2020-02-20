@@ -59,14 +59,14 @@
 					<%
 					 	for (int j = 1; j < articleList.get(i).getRe_lev(); j++) {
 					%>
-									<img
-									src="${pageContext.request.contextPath}/images/reply/blank.gif"
-									alt="화살표이미지"> 
+								<img
+								src="${pageContext.request.contextPath}/images/reply/blank.gif"
+								alt="화살표이미지"> 
 					<%
 					 	}
-					 %> 			<img
-									src="${pageContext.request.contextPath}/images/reply/arrow.png"
-									alt="화살표이미지"> 
+					 %> 		<img
+								src="${pageContext.request.contextPath}/images/reply/arrow.png"
+								alt="화살표이미지"> 
 					<%} %>
 					<%=articleList.get(i).getQuestion_title()%></td>
 				<td class="writer"><%=articleList.get(i).getQuestion_Email()%></td>
