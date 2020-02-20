@@ -22,7 +22,7 @@ public class QuestionDetailAction implements Action {
 		
 		request.setAttribute("article", article);
 		
-		forward.setPath("/question/post.jsp");
+		forward.setPath("${pageContext.request.contextPath}/post.do");
 		forward.setRedirect(false);
 		
 		return forward;

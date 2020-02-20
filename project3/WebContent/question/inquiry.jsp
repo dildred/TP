@@ -10,10 +10,10 @@
 <body>
 	<nav id="sub_menu">
 		<ul>
-			<li><a href="../question/question.jsp">고객센터</a></li>
-			<li><a href="../question/inquiry.jsp">1:1문의하기</a></li>
+			<li><a href="${pageContext.request.contextPath}/question.do">고객센터</a></li>
+			<li><a href="${pageContext.request.contextPath}/inquiry.do">1:1문의하기</a></li>
 			<li><a href="#">신고하기</a></li>
-			<li><a href="../question/myquestion.jsp">내 문의 내역</a></li>
+			<li><a href="${pageContext.request.contextPath}/myquestion.do">내 문의 내역</a></li>
 			<li><a href="#">내 신고 내역?</a></li>
 		</ul>
 	</nav>

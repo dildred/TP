@@ -17,7 +17,7 @@ public class QuestionListAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response)
 									throws Exception {
 	
-		AjaxAction ajax = null;
+		
 		ActionForward forward = null;
 		ArrayList<QuestionBean> articleList =new ArrayList<QuestionBean>();
 		int page = 1;
@@ -33,19 +33,20 @@ public class QuestionListAction implements Action{
 		int listCount = questionService.getListCount();
 		System.out.println(3);
 		//ÃÑ ÆäÀÌÁö ¼ö
-		int maxPage = (int)((double) listCount/limit + 0.95);
+		int maxPage = (int)( (double)listCount/limit + 0.95);
 		
 		PageInfo pageInfo = new PageInfo();
 		pageInfo.setPage(page);
 		pageInfo.setMaxPage(maxPage);
-		
 		pageInfo.setListCount(listCount);
+		
 		System.out.println(4);
 		request.setAttribute("pageInfo", pageInfo);
 		request.setAttribute("articleList", articleList);
 		System.out.println(5);
+		
 		forward = new ActionForward();
-		forward.setPath("../question/question.jsp");
+		forward.setPath("/question/myquestion.jsp");
 		forward.setRedirect(false);
 		
 		

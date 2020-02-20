@@ -13,6 +13,11 @@ import vo.QuestionBean;
 public class QuestionDAO {
 
 	Connection con;
+	PreparedStatement pstmt;
+	ResultSet rs;
+	String sql;
+	
+	
 	private static QuestionDAO questionDAO;
 	
 	private QuestionDAO(){}
@@ -29,16 +34,13 @@ public class QuestionDAO {
 		this.con = con;
 	}
 	
-	PreparedStatement pstmt;
-	ResultSet rs;
-	String sql;
 	
 	//글의 개수 구하기
 	public int selectListCount() {
 		int listCount =0;
 		
 		try {
-			pstmt =con.prepareStatement("SELECT count(*) FROM board");
+			pstmt =con.prepareStatement("SELECT count(*) FROM question");
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
