@@ -16,7 +16,7 @@ public class QuestionModifyService {
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
-		QuestionBean bean = questionDAO.contentLookUp(num);
+		QuestionBean bean = questionDAO.questionDetail(num);
 		close(con);
 		
 		return bean;

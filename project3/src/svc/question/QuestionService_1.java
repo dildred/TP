@@ -85,7 +85,7 @@ public class QuestionService_1 {
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
-		QuestionBean bean = questionDAO.contentLookUp(num);
+		QuestionBean bean = questionDAO.questionDetail(num);
 		close(con);
 		
 		return bean;
@@ -97,7 +97,7 @@ public class QuestionService_1 {
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
-		QuestionBean bean = questionDAO.contentLookUp(num);
+		QuestionBean bean = questionDAO.questionDetail(num);
 		close(con);
 		
 		return bean;

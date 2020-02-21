@@ -204,7 +204,7 @@ public class QuestionDAO {
 
 	// 게시글 상세보기
 	
-	public QuestionBean contentLookUp(int num) {
+	public QuestionBean questionDetail(int num) {
 		QuestionBean question = new QuestionBean();
 		try {
 			sql ="SELECT * FROM question WHERE question_num = ?";
@@ -226,7 +226,7 @@ public class QuestionDAO {
 			}
 			
 		} catch (Exception e) {
-			System.out.println("contentLookUp err : " + e );
+			System.out.println("QuestionDetail err : " + e );
 		}finally {
 			close(rs);
 			close(pstmt);

@@ -17,7 +17,7 @@ public class QuestionDetailService {
 			QuestionDAO questionDAO = QuestionDAO.getInstance();
 			questionDAO.setConnection(con);
 			
-			article = questionDAO.contentLookUp(question_num);
+			article = questionDAO.questionDetail(question_num);
 			
 			close(con);
 			return article;
