@@ -20,7 +20,7 @@ public class QuestionDetailAction implements Action {
 		QuestionDetailService questionDetailService = new QuestionDetailService();
 		System.out.println("디테일4");
 		QuestionBean article = questionDetailService.getArticle(num);
-		System.out.println("디테일5");
+		System.out.println(num);
 		
 		request.setAttribute("article", article);
 		

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.Action;
 import action.question.QuestionDeleteAction;
+import action.question.QuestionDetailAction;
 import action.question.QuestionListAction;
 import action.question.QuestionModifyAction;
 import action.question.QuestionModifyProAction;
@@ -71,6 +72,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 				System.out.println("/questionModify.do err : " + e);
 			}
 		}else if(command.equals("/questionDetail.do" )) {
+			action = new QuestionDetailAction();
 			try {
 				forward = action.execute(request, response);
 				System.out.println("forward");
