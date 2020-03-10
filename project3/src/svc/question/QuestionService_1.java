@@ -11,9 +11,9 @@ import static db.JdbcUtil.*;
 
 public class QuestionService_1 {
 
-	// ÃÑ °Ô½Ã±Û ¼ö
+	// ì´ ê²Œì‹œê¸€ ìˆ˜
 	public int getListCount() throws Exception{
-		System.out.println("¼­ºñ½º1");
+		System.out.println("ì„œë¹„ìŠ¤1");
 		int listCount =0;
 		Connection con = getConnection();
 		QuestionDAO questionDAO = QuestionDAO.getInstance();
@@ -25,9 +25,9 @@ public class QuestionService_1 {
 		
 	}
 	
-	//°Ô½Ã±Û ¸®½ºÆ®
+	//ê²Œì‹œê¸€ ë¦¬ìŠ¤íŠ¸
 	public ArrayList<QuestionBean> getArticleList(int page, int limit) throws Exception{
-		System.out.println("¼­ºñ½º2");
+		System.out.println("ì„œë¹„ìŠ¤2");
 		ArrayList<QuestionBean> articleList =null;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
@@ -40,10 +40,10 @@ public class QuestionService_1 {
 		
 	}
 	
-	//°Ô½Ã±Û ÀúÀå
+	//ê²Œì‹œê¸€ ì €ì¥
 	
 	public boolean registArticle(QuestionBean questionBean) {
-		System.out.println("¼­ºñ½º3");
+		System.out.println("ì„œë¹„ìŠ¤3");
 		boolean isWriteSuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
@@ -58,7 +58,7 @@ public class QuestionService_1 {
 	}
 	
 	
-	//´ä±Û ÀúÀå
+	//ë‹µê¸€ì €ì¥
 	
 	public boolean replyArticle(QuestionBean questionBean) {
 		
@@ -78,10 +78,10 @@ public class QuestionService_1 {
 	
 	
 	
-	//°Ô½Ã±Û »ó¼¼º¸±â(Á¶È¸¼öÇÊ¿ä¾øÀ½)
+	//ê²Œì‹œê¸€ ìƒì„¸ë³´ê¸°(ì¡°íšŒìˆ˜í•„ìš”ì—†ìŒ)
 	
 	public QuestionBean getArticle(int num) {
-		System.out.println("¼­ºñ½º4");
+		System.out.println("ì„œë¹„ìŠ¤4");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -91,9 +91,9 @@ public class QuestionService_1 {
 		return bean;
 	}
 	
-	//¼öÁ¤ÇÒ °Ô½Ã±Û »ó¼¼ º¸±â
+	//ìˆ˜ì •í•  ê²Œì‹œê¸€ ìƒì„¸ ë³´ê¸°
 	public QuestionBean getModifyArticle(int num) {
-		System.out.println("¼­ºñ½º5");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½5");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -104,7 +104,7 @@ public class QuestionService_1 {
 		
 	}
 	
-	//°Ô½Ã±Û ºñ¹Ğ¹øÈ£
+	//ê²Œì‹œê¸€ ë¹„ë°€ë²ˆí˜¸
 	
 	public String getPass(int num) {
 	
@@ -119,10 +119,10 @@ public class QuestionService_1 {
 		}
 	
 	
-	//°Ô½Ã±Û »èÁ¦
+	//ê²Œì‹œê¸€ ì‚­ì œ
 	
 	public void questionDelete(int num) {
-		System.out.println("¼­ºñ½º6");
+		System.out.println("ì„œë¹„ìŠ¤6");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -132,7 +132,7 @@ public class QuestionService_1 {
 	}
 	
 	public boolean modifyArticle(QuestionBean questionBean) {
-		System.out.println("¼­ºñ½º7");
+		System.out.println("ì„œë¹„ìŠ¤7");
 		boolean isModifySuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();

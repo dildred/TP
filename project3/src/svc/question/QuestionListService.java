@@ -13,7 +13,7 @@ import vo.QuestionBean;
 
 
 public class QuestionListService {
-	// �� �Խñ� ��
+	
 	public int getListCount() throws Exception{
 		System.out.println("리스트1");
 		int listCount =0;
@@ -27,7 +27,7 @@ public class QuestionListService {
 		
 	}
 	
-	//�Խñ� ����Ʈ
+	
 	public ArrayList<QuestionBean> getArticleList(int page, int limit) throws Exception{
 		System.out.println("리스트2");
 		ArrayList<QuestionBean> articleList =null;

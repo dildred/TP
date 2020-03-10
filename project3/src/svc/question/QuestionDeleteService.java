@@ -9,10 +9,10 @@ import dao.QuestionDAO;
 
 public class QuestionDeleteService {
 
-	//°Ô½Ã±Û »èÁ¦
+	//ê²Œì‹œê¸€ ì‚­ì œ
 	
 		public void questionDelete(int num) {
-			System.out.println("¼­ºñ½º6");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½6");
 			Connection con = getConnection();
 			QuestionDAO questionDAO =QuestionDAO.getInstance();
 			questionDAO.setConnection(con);
@@ -20,7 +20,7 @@ public class QuestionDeleteService {
 			
 			close(con);
 		}
-		//°Ô½Ã±Û ºñ¹Ð¹øÈ£
+		//ê²Œì‹œê¸€ ë¹„ë°€ë²ˆí˜¸
 		
 		public String getPass(int num) {
 		

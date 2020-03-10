@@ -32,7 +32,7 @@ public class QuestionListAction implements Action{
 		articleList = questionService.getArticleList(page,limit);
 		int listCount = questionService.getListCount();
 		System.out.println(3);
-		//ÃÑ ÆäÀÌÁö ¼ö
+		
 		int maxPage = (int)( (double)listCount/limit + 0.95);
 		
 		PageInfo pageInfo = new PageInfo();
@@ -55,4 +55,4 @@ public class QuestionListAction implements Action{
 
 	
 	
-}//Question¸®½¼¾×¼Ç ²ı
+}//Question ë—

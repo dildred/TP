@@ -10,6 +10,7 @@ import vo.QuestionBean;
 
 public class QuestionDetailService {
 
+	//게시글 상세보기
 	
 	  public QuestionBean getArticle(int question_num) throws Exception{
 	 

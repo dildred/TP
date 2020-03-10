@@ -122,7 +122,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 			if(forward.isRedirect()) {
 				response.sendRedirect(forward.getPath());
 			}else {
-				System.out.println("µğ½ºÆĞÄ¡ ¿À·ù");
+				System.out.println("Controllerì— isRedirect");
 				RequestDispatcher dispatcher=request.getRequestDispatcher(forward.getPath());
 				dispatcher.forward(request, response);
 			}
@@ -135,7 +135,7 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 		
 		
 		
-	}//doProcess ²ı
+	}//doProcess ë—
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -150,4 +150,4 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 	
 	
 	
-}//QuestionForntController ²ı
+}//QuestionForntController ë—

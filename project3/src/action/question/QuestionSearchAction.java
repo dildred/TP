@@ -19,19 +19,19 @@ public class QuestionSearchAction implements Action{
 		
 		ActionForward forward = null;
 
-		String choice = request.getParameter("choice"); //°Ë»ö ±âÁØ
-		String input = request.getParameter("input"); //°Ë»ö ³»¿ë
+		String choice = request.getParameter("choice"); //ê²€ìƒ‰ ê¸°ì¤€
+		String input = request.getParameter("input"); //ê²€ìƒ‰ ë‚´ìš©
 		
 		QuestionSearchService questionService = new QuestionSearchService();
 		ArrayList<QuestionBean> articleList = questionService.questionSearch(choice, input);
 		
-		PageInfo pageInfo = questionService.searchPageInfo(choice, input);//ÆäÀÌÁö Á¤º¸ °´Ã¼
-		int listCount = pageInfo.getListCount(); //°Ë»ö ¸®½ºÆ® ¼ö
-		int page = 1; //Ã¹ ÆäÀÌÁö
-		int limit = 10; //ÆäÀÌÁö Á¦ÇÑ ¼ö
-		int maxPage = (int)((double)listCount/limit +0.95); //ÆäÀÌÁö °è»ê
+		PageInfo pageInfo = questionService.searchPageInfo(choice, input);//í˜ì´ì§€ ì •ë³´ ê°ì²´
+		int listCount = pageInfo.getListCount(); //ê²€ìƒ‰ ë¦¬ìŠ¤íŠ¸ ìˆ˜
+		int page = 1; //ì²« í˜ì´ì§€
+		int limit = 10; //í˜ì´ì§€ ì œí•œ ìˆ˜
+		int maxPage = (int)((double)listCount/limit +0.95); //í˜ì´ì§€ ê³„ì‚°
 		
-		pageInfo.setMaxPage(maxPage);//ÃÑÆäÀÌÁö ¼ö ÀúÀå
+		pageInfo.setMaxPage(maxPage);//ì´ í˜ì´ì§€ ìˆ˜ ì €ì¥
 		pageInfo.setPage(page);
 		
 		AjaxAction ajax = new AjaxAction();

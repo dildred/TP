@@ -35,7 +35,7 @@ public class QuestionDAO {
 	}
 	
 	
-	//±ÛÀÇ °³¼ö ±¸ÇÏ±â
+	//ê¸€ì˜ ê°œìˆ˜ êµ¬í•˜ê¸°
 	public int selectListCount() {
 		int listCount =0;
 		
@@ -53,7 +53,7 @@ public class QuestionDAO {
 		return listCount;
 	}
 	
-	// ±Û µî·Ï
+	// ê¸€ ë“±ë¡
 	
 	public int insertArticle(QuestionBean questionBean) {
 		int num =0;
@@ -96,7 +96,7 @@ public class QuestionDAO {
 		return insertCount;
 	}
 	
-	//´ä±Ûµî·Ï
+	//ë‹µê¸€ ë“±ë¡
 		public int insertReplyArticle(QuestionBean questionBean) {
 			
 			int num = 0;
@@ -163,7 +163,7 @@ public class QuestionDAO {
 				
 		ArrayList<QuestionBean> articleList = new ArrayList<QuestionBean>();
 		QuestionBean question =null;
-		int startrow = (page -1)*10;//ÀĞ±â ½ÃÀÛÇÒ ¹øÈ£
+		int startrow = (page -1)*10;//ì½ê¸° ì‹œì‘í•  ë²ˆí˜¸
 		
 		try {
 			pstmt = con.prepareStatement(sql);
@@ -198,11 +198,11 @@ public class QuestionDAO {
 		return articleList;
 		
 		
-	}//selectArticleList ²ı
+	}//selectArticleList ë—
 	
-	//Á¶È¸¼ö Áõ°¡ ¾ÈÇÔ.
+	//ì¡°íšŒìˆ˜ ì¦ê°€ ì•ˆí•¨.
 
-	// °Ô½Ã±Û »ó¼¼º¸±â
+	//ê²Œì‹œê¸€ ìƒì„¸ ë³´ê¸°
 	
 	public QuestionBean questionDetail(int num) {
 		QuestionBean question = new QuestionBean();
@@ -233,9 +233,9 @@ public class QuestionDAO {
 		}
 		return question;
 		
-	}//contentLookUp ²ı
+	}//contentLookUp ë—
 	
-	//ºñ¹ø ÇÔ
+	//ë¹„ë²ˆ .
 	public String getPass(int num) {
 		String passwd = null;
 		try {
@@ -254,7 +254,7 @@ public class QuestionDAO {
 		return passwd;
 	}
 	
-	//°Ô½Ã±Û »èÁ¦
+	//ê²Œì‹œê¸€ ì‚­ì œ
 	public void questionDelete(int num) {
 		try {
 			sql = "delete from question where question_num =? ";
@@ -291,7 +291,7 @@ public class QuestionDAO {
 		return insertCount;
 	}
 	
-	//Á¦¸ñ ±âÁØÀ¸·Î °Ô½Ã±Û °Ë»ö
+	//ì œëª© ê¸°ì¤€ìœ¼ë¡œ ê²Œì‹œê¸€ ê²€ìƒ‰
 	
 	public ArrayList<QuestionBean> titleSearchList(String input){
 		
@@ -369,4 +369,4 @@ public class QuestionDAO {
 	}
 	
 	
-}//DAO ²ı
+}//DAO ë—

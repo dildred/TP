@@ -38,7 +38,7 @@ public class QuestionModifyProAction implements Action{
 			PrintWriter out = response.getWriter();
 			
 			out.println("<script>");
-			out.println("alert('¼öÁ¤½ÇÆÐ');");
+			out.println("alert('ìˆ˜ì •ì‹¤íŒ¨');");
 			out.println("history.back();");
 			out.println("</script>");
 		}else{

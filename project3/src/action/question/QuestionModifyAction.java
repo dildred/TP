@@ -16,10 +16,10 @@ public class QuestionModifyAction  implements Action{
 		
 		ActionForward forward = null;
 		
-		int num = Integer.parseInt(request.getParameter("question_num")); //¼öÁ¤ÇÒ ±Û¹øÈ£
+		int num = Integer.parseInt(request.getParameter("question_num")); //ìˆ˜ì •í•  ê¸€ ë²ˆí˜¸
 		
 		QuestionModifyService questionService = new QuestionModifyService();
-		QuestionBean article = questionService.getModifyArticle(num);//¼öÁ¤ÇÒ °Ô½Ã±ÛÁ¤º¸
+		QuestionBean article = questionService.getModifyArticle(num);//ìˆ˜ì •í•  ê²Œì‹œê¸€ ì •ë³´
 		
 		request.setAttribute("article", article);
 

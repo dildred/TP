@@ -3,7 +3,7 @@ $(function() {
 
 	//페이지에 맞는 리스트 보기
 	$('.writing input').click(function() {
-		var fullurl = URL+"question/question.jsp";
+		var fullurl = URL+"question.jsp";// 이거 앞에 question/ 지웠음 문제생기면 이거 돌리기, 근대 말이되나 이게;
 		
 		window.location.href = fullurl;
 	});
@@ -50,12 +50,12 @@ $(function() {
 					var list = "";
 					var page = "";
 					
-					for(var i in memberlist){
+					for(var i in questionlist){// memberlist 되있는거 questionlist로 바꿔봄 0310 아래도 다
 						list += "<tr class='row'>";
-						list += 	"<td class='num'>"+memberlist[i].num+"</td>";
+						list += 	"<td class='num'>"+questionlist[i].num+"</td>";
 						list += 	"<td class='subject'>"
-						if(memberlist[i].re_lev != 0){
-							for(var j=1; j<memberlist[i].re_lev; j++){
+						if(questionlist[i].re_lev != 0){
+							for(var j=1; j<questionlist[i].re_lev; j++){
 						list += 	"<img src='/question/images/reply/blank.gif' alt='화살표이미지'> ";		
 							}
 						list += 	"<img src='/question/images/reply/arrow.png' alt='화살표이미지'> ";
@@ -63,9 +63,9 @@ $(function() {
 						list +=		memberlist[i].subject;
 						list += 	"</td>";
 						
-						list += 	"<td class='writer'>"+memberlist[i].name+"</td>";
-						list += 	"<td class='date'>"+memberlist[i].date+"</td>";
-						list +=  	"<td class='views'>"+memberlist[i].count+"</td>";
+						list += 	"<td class='writer'>"+questionlist[i].name+"</td>";
+						list += 	"<td class='date'>"+questionlist[i].date+"</td>";
+						list +=  	"<td class='views'>"+questionlist[i].count+"</td>";
 						list += "</tr>";
 						
 					}
@@ -95,7 +95,7 @@ $(function() {
 		var tr = $(this);
 		var td = tr.children();
 		var num = td.eq(0).text();
-		console.log(num);
+		console.log("js임니당");
 		
 		var fullurl = URL+"questionDetail.do?num="+num;
 		window.location.href = fullurl;

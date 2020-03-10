@@ -14,11 +14,11 @@ public class QuestionDeleteAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		ActionForward forward = null;//°Ô½Ã±Û ¹øÈ£
-		int Question_num = Integer.parseInt(request.getParameter("question_num")); //¹®ÀÇ±Û ¹øÈ£
+		ActionForward forward = null;//ê²Œì‹œê¸€ ë²ˆí˜¸
+		int Question_num = Integer.parseInt(request.getParameter("question_num")); //ë¬¸ì˜ê¸€ ë²ˆí˜¸
 		System.out.println(Question_num);
 		
-		String input = request.getParameter("input");//ºñ¹øÀÎµ¥ ÀÏµı ³Ö¾îº½
+		String input = request.getParameter("input");//ì§€ìš°ê¸°ìœ„í•œ ë¹„ë²ˆì¸ë”” ì¼ë‹¨ ë„£ì–´ë´„
 		System.out.println(input);
 		
 		QuestionDeleteService questionService = new QuestionDeleteService();

@@ -10,9 +10,9 @@ import vo.QuestionBean;
 
 public class QuestionModifyService {
 	
-	//¼öÁ¤ÇÒ °Ô½Ã±Û »ó¼¼ º¸±â
+	//ìˆ˜ì •í•  ê²Œì‹œê¸€ ë³´ê¸°
 	public QuestionBean getModifyArticle(int num) {
-		System.out.println("¼­ºñ½º5");
+		System.out.println("ìˆ˜ì •ì„œë¹„ìŠ¤5");
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -24,7 +24,7 @@ public class QuestionModifyService {
 	}
 	
 	public boolean modifyArticle(QuestionBean questionBean) {
-		System.out.println("¼­ºñ½º7");
+		System.out.println("ìˆ˜ì •ì„œë¹„ìŠ¤7");
 		boolean isModifySuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();

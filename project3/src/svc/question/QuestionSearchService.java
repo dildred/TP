@@ -13,7 +13,7 @@ import vo.QuestionBean;
 public class QuestionSearchService {
 
 	
-	//°Ô½Ã±Û °Ë»ö
+	//ê²€ìƒ‰í•˜ê¸°
 	
 	public ArrayList<QuestionBean> questionSearch(String choice, String input) {
 

@@ -10,7 +10,7 @@ import vo.QuestionBean;
 
 public class QuestionReplyService {
 	
-	//´ä±Û ÀúÀå
+	//ë‹µê¸€ë‹¬ê¸°
 	
 	public boolean replyArticle(QuestionBean questionBean) {
 		

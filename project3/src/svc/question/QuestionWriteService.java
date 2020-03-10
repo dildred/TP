@@ -10,10 +10,10 @@ import vo.QuestionBean;
 
 public class QuestionWriteService {
 
-	//°Ô½Ã±Û ÀúÀå
+	//ê²Œì‹œê¸€ ì“°ê¸°
 	
 	public boolean registArticle(QuestionBean questionBean) {
-		System.out.println("¼­ºñ½º3");
+		System.out.println("ï¿½ï¿½ï¿½ï¿½3");
 		boolean isWriteSuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();

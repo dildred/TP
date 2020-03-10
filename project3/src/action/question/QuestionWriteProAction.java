@@ -32,7 +32,7 @@ public class QuestionWriteProAction implements Action{
 		QuestionWriteService questionService = new QuestionWriteService();
 		boolean isWriteSuccess = questionService.registArticle(questionBean);
 		
-		System.out.println("∂Û¿Ã∆Æ1");
+		System.out.println("ÔøΩÔøΩÔøΩÔøΩ∆Æ1");
 		
 		if(!isWriteSuccess) {
 			
@@ -40,7 +40,7 @@ public class QuestionWriteProAction implements Action{
 			PrintWriter out =response.getWriter();
 			
 			out.print("<script>");
-			out.print("alert('µÓ∑œΩ«∆–');");
+			out.print("alert('Îì±Î°ùÏã§Ìå®');");
 			out.print("history.back()");
 			out.print("</script>");
 			
@@ -56,4 +56,4 @@ public class QuestionWriteProAction implements Action{
 	}
 
 	
-}//QuestionWriteProAction ≤˝
+}//QuestionWriteProAction ÎÅó
