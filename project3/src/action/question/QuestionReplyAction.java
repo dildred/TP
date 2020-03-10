@@ -17,25 +17,25 @@ public class QuestionReplyAction implements Action{
 		ActionForward forward = null;
 		QuestionBean questionBean = null;
 		
-		int question_num = Integer.parseInt(request.getParameter("question_num")); //´ä±Û °Ô½Ã±Û ¹øÈ£
+		int question_num = Integer.parseInt(request.getParameter("question_num")); //ï¿½ï¿½ï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½È£
 		int re_ref = Integer.parseInt(request.getParameter("re_ref"));
 		int re_lev = Integer.parseInt(request.getParameter("re_lev"));
 		int re_step = Integer.parseInt(request.getParameter("re_step"));
 		
-		String Email = request.getParameter("Emal"); //´ä±Û ÀÛ¼ºÀÚ
-		String title = request.getParameter("title"); //´ä±Û Á¦¸ñ
-		String comment = request.getParameter("comment"); //´ä±Û ³»¿ë
+		String Email = request.getParameter("Emal"); //ì•„ì´ë””
+		String title = request.getParameter("title"); //ì œëª©
+		String comment = request.getParameter("comment"); // ë‚´ìš©
 		
 		
 		
 		questionBean = new QuestionBean();
-		//´ä±Û °Ô½Ã±Û Á¤º¸
+		
 		questionBean.setQuestion_num(question_num);
 		questionBean.setRe_ref(re_ref);
 		questionBean.setRe_lev(re_lev);
 		questionBean.setRe_step(re_step);
 		
-		//´ä±Û Á¤º¸
+		
 		questionBean.setQuestion_Email(Email);
 		questionBean.setQuestion_title(title);
 		questionBean.setQuestion_comment(comment);
@@ -49,7 +49,7 @@ public class QuestionReplyAction implements Action{
 			PrintWriter out = response.getWriter();
 			
 			out.println("<script>");
-			out.println("alert('´äÀå½ÇÆĞ');");
+			out.println("alert('ë“±ë¡ì‹¤íŒ¨');");
 			out.println("history.back();");
 			out.println("</script>");
 			
@@ -57,7 +57,7 @@ public class QuestionReplyAction implements Action{
 			
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("questionList.bo");
+			forward.setPath("questionList.do");
 			
 		}
 		

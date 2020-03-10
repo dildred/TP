@@ -40,12 +40,12 @@
 							<textarea rows="30" cols="10" id="content" name="content"></textarea>
 						</td>
 					</tr>
-				<!-- 	<tr>
+				 	<tr>
 						<th>비밀번호</th>
 						<td>
 							<input type="text" id="passwrd" name="passwrd">
 						</td>
-					</tr> -->
+					</tr>
 				</table>
 				<div class="writing_button">
 					<input class="button" id="writing_submit" type="button" value="등록">

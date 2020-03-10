@@ -96,7 +96,7 @@
 	</div>
 </div>
 	<div class="writing">
-		<input type="button" value="글쓰기">
+		<input type="button" value="글쓰기" >
 	</div>
 </article>
 
