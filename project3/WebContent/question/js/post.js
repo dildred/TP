@@ -1,5 +1,5 @@
 $(function() {
-	var URL = window.location.protocol+"//"+window.location.host+"/question/";
+	var URL = window.location.protocol+"//"+window.location.host+"/project3/";
 	
 	$('.post_btn_block').on('click','input',function(){
 		

@@ -13,9 +13,9 @@ import vo.QuestionBean;
 
 
 public class QuestionListService {
-	// ÃÑ °Ô½Ã±Û ¼ö
+	// ï¿½ï¿½ ï¿½Ô½Ã±ï¿½ ï¿½ï¿½
 	public int getListCount() throws Exception{
-		System.out.println("¼­ºñ½º1");
+		System.out.println("ë¦¬ìŠ¤íŠ¸1");
 		int listCount =0;
 		Connection con = getConnection();
 		QuestionDAO questionDAO = QuestionDAO.getInstance();
@@ -27,9 +27,9 @@ public class QuestionListService {
 		
 	}
 	
-	//°Ô½Ã±Û ¸®½ºÆ®
+	//ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	public ArrayList<QuestionBean> getArticleList(int page, int limit) throws Exception{
-		System.out.println("¼­ºñ½º2");
+		System.out.println("ë¦¬ìŠ¤íŠ¸2");
 		ArrayList<QuestionBean> articleList =null;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
