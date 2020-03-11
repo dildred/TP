@@ -49,7 +49,7 @@ public class AjaxAction {
 	}
 	
 	
-	//다시보자 이건 모르겠따 ;
+	
 	
 }
 

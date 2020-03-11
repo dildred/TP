@@ -31,7 +31,7 @@ $(function() {
 			
 		}else if(button == '삭제'){
 			
-			//var input = prompt('비밀번호를 입력하세요');
+			var input = prompt('비밀번호를 입력하세요');
 			var fullurl = URL+"questionDelete.do";
 			var Info = "&question_num="+question_num+"&input="+input;
 			$.question(fullurl,Info);

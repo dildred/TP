@@ -19,8 +19,8 @@
 		</ul>
 	</nav>
 	<article>
-		<div class="inquiry_wrap">
-			<div class="inquiry_input">
+		<div class="writing_wrap">
+			<div class="writing_input">
 				<h1 align="center">1:1 문의하기</h1>
 				<form action="${pageContext.request.contextPath}/questionWritePro.do" method="post" id="questionWrite_form">
 					<table>
@@ -34,10 +34,10 @@
 							<th scope="row">상담분류</th>
 							 <td>
 								<select style="width:280px; height:30px" title="문의분야 선택" class="select_st">
-									<option value="">뭐</option>
-									<option value="">하</option>
-									<option value="">지</option>
+									<option value="">계정 관련</option>
+									<option value="">사기 관련</option>
 									<option value="">?</option>
+									<option value="">!</option>
 								</select>
 							</td> 
 						</tr>
@@ -54,8 +54,8 @@
 							</td>
 						</tr>
 					</table>
-					<div class="inquiry_button">
-						<input class="button" id="inquiry_submit" type="submit" value="등록">
+					<div class="writing_button">
+						<input class="button" id="writing_submit" type="submit" value="등록">
 						<input class="button" type="reset" value="다시쓰기">
 						<input class="button" type="button" value="목록" onclick="javascript:history.go(-1)">
 					</div>

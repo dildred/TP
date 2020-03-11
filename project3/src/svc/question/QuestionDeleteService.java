@@ -7,12 +7,14 @@ import java.sql.Connection;
 
 import dao.QuestionDAO;
 
+import static db.JdbcUtil.*;
+
 public class QuestionDeleteService {
 
 	//게시글 삭제
 	
 		public void questionDelete(int num) {
-			System.out.println("����6");
+			System.out.println("삭제6");
 			Connection con = getConnection();
 			QuestionDAO questionDAO =QuestionDAO.getInstance();
 			questionDAO.setConnection(con);

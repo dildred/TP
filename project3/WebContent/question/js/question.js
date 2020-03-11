@@ -44,28 +44,27 @@ $(function() {
 				data: {"page" : page},
 				dataType: "text",
 				success: function(data) {
-					
+					console.log(data)
 					var jsonInfo = JSON.parse(data);
-					var articleList = jsonInfo.questions;
+					var articleList = jsonInfo.members;
 					var list = "";
 					var page = "";
 					
-					for(var i in articleList){// memberlist 되있는거 questionlist로 바꿔봄 0310 아래도 다
+					for(var i in articleList){
 						list += "<tr class='row'>";
 						list += 	"<td class='num'>"+articleList[i].num+"</td>";
 						list += 	"<td class='subject'>"
 						if(articleList[i].re_lev != 0){
 							for(var j=1; j<articleList[i].re_lev; j++){
-						list += 	"<img src='/question/images/reply/blank.gif' alt='화살표이미지'> ";		
+						list += 	"<img src='/question/images/reply/blank.gif' alt='화살표이미지'> ";	
 							}
 						list += 	"<img src='/question/images/reply/arrow.png' alt='화살표이미지'> ";
 						}
-						list +=		articleList[i].subject;
+						list +=		articleList[i].title;
 						list += 	"</td>";
-						
-						list += 	"<td class='writer'>"+articleList[i].name+"</td>";
+						list += 	"<td class='writer'>"+articleList[i].Email+"</td>";
 						list += 	"<td class='date'>"+articleList[i].date+"</td>";
-						list +=  	"<td class='views'>"+articleList[i].count+"</td>";
+						//list +=  	"<td class='views'>"+articleList[i].count+"</td>"; 조회수안함
 						list += "</tr>";
 						
 					}

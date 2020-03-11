@@ -14,7 +14,7 @@ public class QuestionDeleteAction implements Action{
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		ActionForward forward = null;//게시글 번호
+		ActionForward forward = null;
 		int Question_num = Integer.parseInt(request.getParameter("question_num")); //문의글 번호
 		System.out.println(Question_num);
 		
@@ -25,8 +25,13 @@ public class QuestionDeleteAction implements Action{
 		String passwd = questionService.getPass(Question_num);
 		System.out.println(passwd);
 		
+		if("ajax".equals(request.getParameter("Handler") ) ) { //비동기 요청일때
+			
+		}
 		
+		//ajax로 요청받음
 		if(passwd.equals(input)) {
+			
 			questionService.questionDelete(Question_num);
 			JSONObject result = new JSONObject();
 			result.put("result", "success");
@@ -34,6 +39,7 @@ public class QuestionDeleteAction implements Action{
 			request.setAttribute("jsonInfo", jsonInfo);
 			
 		}else {
+			
 			JSONObject result = new JSONObject();
 			result.put("result","fail");
 			String jsonInfo = result.toJSONString();

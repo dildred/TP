@@ -35,12 +35,12 @@
 							<textarea rows="30" cols="10" id="content" name="content"><%=article.getQuestion_comment() %></textarea>
 						</td>
 					</tr>
-					<%-- <tr>
+					 <tr>
 						<th>비밀번호</th>
 						<td>
 							<input type="text" id="password" name="password" value="<%=article.getQuestion_pass() %>">
 						</td>
-					</tr> --%>
+					</tr>
 				</table>
 				<div class="writing_button">
 					<input class="button" id="modify_submit" type="button" value="수정하기">

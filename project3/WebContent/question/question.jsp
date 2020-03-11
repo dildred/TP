@@ -58,7 +58,7 @@
 					
 					<%
 					 	for (int j = 1; j < articleList.get(i).getRe_lev(); j++) {
-					%>
+					%>		
 								<img
 								src="${pageContext.request.contextPath}/images/reply/blank.gif"
 								alt="화살표이미지"> 

@@ -32,8 +32,6 @@ public class QuestionWriteProAction implements Action{
 		QuestionWriteService questionService = new QuestionWriteService();
 		boolean isWriteSuccess = questionService.registArticle(questionBean);
 		
-		System.out.println("����Ʈ1");
-		
 		if(!isWriteSuccess) {
 			
 			response.setContentType("text/html;charset=utf-8");
