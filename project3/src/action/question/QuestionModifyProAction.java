@@ -45,7 +45,7 @@ public class QuestionModifyProAction implements Action{
 			
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("questionList.bo");
+			forward.setPath("questionList.do");
 			
 		}
 		

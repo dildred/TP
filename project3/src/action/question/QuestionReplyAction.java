@@ -17,12 +17,12 @@ public class QuestionReplyAction implements Action{
 		ActionForward forward = null;
 		QuestionBean questionBean = null;
 		
-		int question_num = Integer.parseInt(request.getParameter("question_num")); //��� �Խñ� ��ȣ
+		int question_num = Integer.parseInt(request.getParameter("question_num"));
 		int re_ref = Integer.parseInt(request.getParameter("re_ref"));
 		int re_lev = Integer.parseInt(request.getParameter("re_lev"));
 		int re_step = Integer.parseInt(request.getParameter("re_step"));
 		
-		String Email = request.getParameter("Emal"); //아이디
+		String Email = request.getParameter("Email"); //아이디
 		String title = request.getParameter("title"); //제목
 		String comment = request.getParameter("comment"); // 내용
 		

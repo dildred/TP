@@ -14,31 +14,31 @@
 	<div class="writing_wrap">
 		<div class="writing_input">
 			<h1 align="center">게시글 수정</h1>
-			<form action="${pageContext.request.contextPath}/QuestionModifyPro.bo" method="post" id="modify_form">
-				<input type="hidden" value="<%=article.getQuestion_num() %>" name="Question_num">
+			<form action="${pageContext.request.contextPath}/questionModifyPro.do" method="post" id="modify_form">
+				<input type="hidden" value="<%=article.getQuestion_num() %>" name="question_num">
 				<table>
 					<tr>
 						<th>작성자</th>
 						<td>
-							<input type="text" id="writer" name="writer" value="<%=article.getQuestion_Email() %>">
+							<input type="text" id="Email" name="Email" value="<%=article.getQuestion_Email() %>">
 						</td> 
 					</tr>
 					<tr>
 						<th>제목</th>
 						<td>
-							<input type="text" id="subject" name="subject" value="<%=article.getQuestion_title() %>">
+							<input type="text" id="title" name="title" value="<%=article.getQuestion_title() %>">
 						</td>
 					</tr>
 					<tr>
 						<th>내용</th>
 						<td>
-							<textarea rows="30" cols="10" id="content" name="content"><%=article.getQuestion_comment() %></textarea>
+							<textarea rows="30" cols="10" id="comment" name="comment"><%=article.getQuestion_comment() %></textarea>
 						</td>
 					</tr>
 					 <tr>
 						<th>비밀번호</th>
 						<td>
-							<input type="text" id="password" name="password" value="<%=article.getQuestion_pass() %>">
+							<input type="text" id="passwd" name="passwd" value="<%=article.getQuestion_pass() %>">
 						</td>
 					</tr>
 				</table>

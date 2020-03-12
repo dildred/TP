@@ -125,8 +125,8 @@ public class QuestionDAO {
 				sql = "INSERT INTO question(QUESTION_NUM, "
 						  + "QUESTION_EMAIL, "
 						  + "QUESTION_TITLE, "
-						  + "QUESTION_CONTEXT, "
 						  + "QUESTION_COMMENT, "
+						  + "QUESTION_PASS, "
 						  + "RE_REF, RE_LEV, RE_STEP, "
 						  + "QUESTION_DATE) "
 					+ "VALUES(?,?,?,?,?,?,?,?,now())";
@@ -135,8 +135,8 @@ public class QuestionDAO {
 				pstmt.setInt(1, num); 
 				pstmt.setString(2, questionBean.getQuestion_Email()); 
 				pstmt.setString(3, questionBean.getQuestion_title()); 
-				pstmt.setString(4, questionBean.getQuestion_context());
-				pstmt.setString(5, questionBean.getQuestion_comment()); 
+				pstmt.setString(4, questionBean.getQuestion_comment());
+				pstmt.setString(5, questionBean.getQuestion_pass()); 
 				pstmt.setInt(6, re_ref); 
 				pstmt.setInt(7, re_lev); 
 				pstmt.setInt(8, re_step);
@@ -257,7 +257,7 @@ public class QuestionDAO {
 	//게시글 삭제
 	public void questionDelete(int num) {
 		try {
-			sql = "delete from question where question_num =? ";
+			sql = "DELETE FROM question WHERE question_num =? ";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, num);
 			pstmt.executeUpdate();

@@ -5,6 +5,7 @@ $(function() {
 		
 		var title = $('#title').val();
 		var comment = $('#comment').val();
+		var passwd = $('#passwd').val();
 		
 		if(title == "" || title.length == 0){
 			alert('제목을 입력해주세요.');
@@ -20,11 +21,12 @@ $(function() {
 	$('#modify_submit').click(function() {
 		
 		var title = $('#title').val();
-		var content = $('#comment').val();
+		var comment = $('#comment').val();
+		var passwd = $('#passwd').val();
 		
-		if(subject == "" || subject.length == 0){
+		if(title == "" || title.length == 0){
 			alert('제목을 입력해주세요.');
-		}else if(content == "" || content.length == 0){
+		}else if(comment == "" || comment.length == 0){
 			alert('내용을 입력해주세요.');
 		}else{
 			$('#modify_form').submit();

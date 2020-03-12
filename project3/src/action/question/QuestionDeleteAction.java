@@ -15,14 +15,14 @@ public class QuestionDeleteAction implements Action{
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
 		ActionForward forward = null;
-		int Question_num = Integer.parseInt(request.getParameter("question_num")); //문의글 번호
-		System.out.println(Question_num);
+		int question_num = Integer.parseInt(request.getParameter("question_num")); //문의글 번호
+		System.out.println(question_num);
 		
 		String input = request.getParameter("input");//지우기위한 비번인디 일단 넣어봄
 		System.out.println(input);
 		
-		QuestionDeleteService questionService = new QuestionDeleteService();
-		String passwd = questionService.getPass(Question_num);
+		QuestionDeleteService questionDeleteService = new QuestionDeleteService();
+		String passwd = questionDeleteService.getPass(question_num);
 		System.out.println(passwd);
 		
 		if("ajax".equals(request.getParameter("Handler") ) ) { //비동기 요청일때
@@ -30,9 +30,9 @@ public class QuestionDeleteAction implements Action{
 		}
 		
 		//ajax로 요청받음
-		if(passwd.equals(input)) {
+		if(!passwd.equals(input)) {
 			
-			questionService.questionDelete(Question_num);
+			questionDeleteService.questionDelete(question_num);
 			JSONObject result = new JSONObject();
 			result.put("result", "success");
 			String jsonInfo = result.toJSONString();

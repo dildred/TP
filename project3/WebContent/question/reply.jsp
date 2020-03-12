@@ -25,25 +25,25 @@
 					<tr>
 						<th>작성자</th>
 						<td>
-							<input type="text" id="writer" name="writer">
+							<input type="text" id="Email" name="Email">
 						</td> 
 					</tr>
 					<tr>
 						<th>제목</th>
 						<td>
-							<input type="text" id="subject" name="subject">
+							<input type="text" id="title" name="title">
 						</td>
 					</tr>
 					<tr>
 						<th>내용</th>
 						<td>
-							<textarea rows="30" cols="10" id="content" name="content"></textarea>
+							<textarea rows="30" cols="10" id="comment" name="comment"></textarea>
 						</td>
 					</tr>
 				 	<tr>
 						<th>비밀번호</th>
 						<td>
-							<input type="text" id="passwrd" name="passwrd">
+							<input type="text" id="passwd" name="passwd">
 						</td>
 					</tr>
 				</table>

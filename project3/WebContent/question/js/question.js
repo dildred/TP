@@ -53,16 +53,17 @@ $(function() {
 					for(var i in articleList){
 						list += "<tr class='row'>";
 						list += 	"<td class='num'>"+articleList[i].num+"</td>";
-						list += 	"<td class='subject'>"
+						list += 	"<td class='title'>"
 						if(articleList[i].re_lev != 0){
 							for(var j=1; j<articleList[i].re_lev; j++){
-						list += 	"<img src='/question/images/reply/blank.gif' alt='화살표이미지'> ";	
+						list += 	"<img src='./question/images/reply/blank.gif' alt='화살표이미지'> ";	
 							}
-						list += 	"<img src='/question/images/reply/arrow.png' alt='화살표이미지'> ";
-						}
+						list += 	"<img src='./question/images/reply/arrow.png' alt='화살표이미지'> ";
+							}
 						list +=		articleList[i].title;
 						list += 	"</td>";
-						list += 	"<td class='writer'>"+articleList[i].Email+"</td>";
+						
+						list += 	"<td class='Email'>"+articleList[i].Email+"</td>";
 						list += 	"<td class='date'>"+articleList[i].date+"</td>";
 						//list +=  	"<td class='views'>"+articleList[i].count+"</td>"; 조회수안함
 						list += "</tr>";

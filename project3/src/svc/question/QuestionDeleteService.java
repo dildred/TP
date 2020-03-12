@@ -11,19 +11,8 @@ import static db.JdbcUtil.*;
 
 public class QuestionDeleteService {
 
-	//게시글 삭제
+	//게시글 비밀번호
 	
-		public void questionDelete(int num) {
-			System.out.println("삭제6");
-			Connection con = getConnection();
-			QuestionDAO questionDAO =QuestionDAO.getInstance();
-			questionDAO.setConnection(con);
-			questionDAO.questionDelete(num);
-			
-			close(con);
-		}
-		//게시글 비밀번호
-		
 		public String getPass(int num) {
 		
 				Connection con = getConnection();
@@ -35,4 +24,17 @@ public class QuestionDeleteService {
 				
 				return passwd;
 			}
+			
+	//게시글 삭제
+	
+		public void questionDelete(int num) {
+			
+			Connection con = getConnection();
+			QuestionDAO questionDAO =QuestionDAO.getInstance();
+			questionDAO.setConnection(con);
+			questionDAO.questionDelete(num);
+			
+			close(con);
+		}
+		
 }

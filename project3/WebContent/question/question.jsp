@@ -37,39 +37,25 @@
 		<thead> 
 			<tr>
 				<th class="num">번호</th>
-				<th class="subejct">제목</th>
-				<th class="writer">작성자</th>
+				<th class="title">제목</th>
+				<th class="Email">작성자</th>
 				<th class="date">작성일</th>
 			</tr>
 		</thead>
 		<tbody>
-			<%
-				if (articleList != null) {
-			%>
-			<%
-				for (int i = 0; i < articleList.size(); i++) {
-			%>
+			<%if(articleList != null) {%>
+			<%for(int i = 0; i < articleList.size(); i++) {%>
 			<tr class="row">
 				<td class="num"><%=articleList.get(i).getQuestion_num()%></td>
-				<td class="subject">
-					<%
-						if (articleList.get(i).getRe_lev() > 0) {
-					%>
-					
-					<%
-					 	for (int j = 1; j < articleList.get(i).getRe_lev(); j++) {
-					%>		
-								<img
-								src="${pageContext.request.contextPath}/images/reply/blank.gif"
-								alt="화살표이미지"> 
-					<%
-					 	}
-					 %> 		<img
-								src="${pageContext.request.contextPath}/images/reply/arrow.png"
-								alt="화살표이미지"> 
+				<td class="title">
+			<%if (articleList.get(i).getRe_lev() > 0) {%>
+				<%for (int j = 1; j < articleList.get(i).getRe_lev(); j++) { %>		
+					<img src="${pageContext.request.contextPath}/images/reply/blank.gif" alt="화살표이미지"> 
+					<%} %> 		
+					<img src="${pageContext.request.contextPath}/images/reply/arrow.png" alt="화살표이미지"> 
 					<%} %>
 					<%=articleList.get(i).getQuestion_title()%></td>
-				<td class="writer"><%=articleList.get(i).getQuestion_Email()%></td>
+				<td class="Email"><%=articleList.get(i).getQuestion_Email()%></td>
 				<td class="date"><%=articleList.get(i).getQuestion_date()%></td>
 			</tr>
 			<%}%>
