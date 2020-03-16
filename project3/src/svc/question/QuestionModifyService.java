@@ -4,7 +4,6 @@ import static db.JdbcUtil.close;
 import static db.JdbcUtil.getConnection;
 
 import java.sql.Connection;
-
 import dao.QuestionDAO;
 import vo.QuestionBean;
 
@@ -12,7 +11,7 @@ public class QuestionModifyService {
 	
 	//수정할 게시글 보기
 	public QuestionBean getModifyArticle(int num) {
-		System.out.println("수정서비스5");
+		
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
 		questionDAO.setConnection(con);
@@ -24,7 +23,7 @@ public class QuestionModifyService {
 	}
 	
 	public boolean modifyArticle(QuestionBean questionBean) {
-		System.out.println("수정서비스7");
+		
 		boolean isModifySuccess = false;
 		Connection con = getConnection();
 		QuestionDAO questionDAO =QuestionDAO.getInstance();
@@ -36,5 +35,18 @@ public class QuestionModifyService {
 		close(con);
 		
 		return isModifySuccess;
+	}
+	
+	//게시글 비밀번호
+	public String getPass(int num) {
+		
+		Connection con = getConnection();
+		QuestionDAO questionDAO = QuestionDAO.getInstance();
+		questionDAO.setConnection(con);
+		String passwd = questionDAO.getPass(num);
+		
+		close(con);
+		
+		return passwd;
 	}
 }

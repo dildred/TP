@@ -21,6 +21,7 @@ public class QuestionBean {
 						String question_title,
 						String question_context,
 						String question_comment,
+						String question_pass,
 						int re_ref,
 						int re_lev,
 						int re_step,
@@ -31,6 +32,7 @@ public class QuestionBean {
 		this.question_title =question_title;
 		this.question_context =question_context;
 		this.question_comment =question_comment;
+		this.question_pass = question_pass;
 		this.re_ref =re_ref;
 		this.re_lev =re_lev;
 		this.re_step=re_step;

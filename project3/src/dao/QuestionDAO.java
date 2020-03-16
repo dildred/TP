@@ -220,6 +220,7 @@ public class QuestionDAO {
 				question.setQuestion_title(rs.getString("question_title"));
 				question.setQuestion_context(rs.getString("question_context"));
 				question.setQuestion_comment(rs.getString("question_comment"));
+				question.setQuestion_pass(rs.getString("question_pass"));
 				question.setRe_ref(rs.getInt("re_ref"));
 				question.setRe_lev(rs.getInt("re_lev"));
 				question.setRe_step(rs.getInt("re_step"));
@@ -275,12 +276,12 @@ public class QuestionDAO {
 		int insertCount = 0;
 		
 		try {
-			sql = "update question set question_Email =?, question_title=?, question_context=?, question_comment=? where question_num=?";
+			sql = "update question set question_Email =?, question_title=?, question_comment=?, question_pass=?  where question_num=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, questionBean.getQuestion_Email());
 			pstmt.setString(2, questionBean.getQuestion_title()); 
-			pstmt.setString(3, questionBean.getQuestion_context()); 
-			pstmt.setString(4, questionBean.getQuestion_comment()); 
+			pstmt.setString(3, questionBean.getQuestion_comment()); 
+			pstmt.setString(4, questionBean.getQuestion_pass()); 
 			pstmt.setInt(5, questionBean.getQuestion_num()); 
 			insertCount = pstmt.executeUpdate();
 			
