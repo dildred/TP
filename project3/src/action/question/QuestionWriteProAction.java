@@ -22,12 +22,14 @@ public class QuestionWriteProAction implements Action{
 		String title = request.getParameter("title");
 		String comment = request.getParameter("comment");
 		String context = request.getParameter("context");
+		String passwd = request.getParameter("passwd");
 		
 		questionBean = new QuestionBean();
 		questionBean.setQuestion_Email(Email);
 		questionBean.setQuestion_title(title);
 		questionBean.setQuestion_context(context);
 		questionBean.setQuestion_comment(comment);
+		questionBean.setQuestion_pass(passwd);
 		
 		QuestionWriteService questionService = new QuestionWriteService();
 		boolean isWriteSuccess = questionService.registArticle(questionBean);

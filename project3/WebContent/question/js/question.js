@@ -44,7 +44,7 @@ $(function() {
 				data: {"page" : page},
 				dataType: "text",
 				success: function(data) {
-					console.log(data)
+					
 					var jsonInfo = JSON.parse(data);
 					var articleList = jsonInfo.members;
 					var list = "";

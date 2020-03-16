@@ -9,11 +9,11 @@ public class QuestionBean {
 	private String question_title;
 	private String question_context;
 	private String question_comment;
+	private String question_pass;
 	private int re_ref;
 	private int re_lev;
 	private int re_step;
 	private Date question_date;
-	private String question_pass;
 	
 	public QuestionBean(){}
 	public QuestionBean(int question_num,
@@ -72,6 +72,12 @@ public class QuestionBean {
 	public void setQuestion_comment(String question_comment) {
 		this.question_comment = question_comment;
 	}
+	public String getQuestion_pass() {
+		return question_pass;
+	}
+	public void setQuestion_pass(String question_pass) {
+		this.question_pass = question_pass;
+	}
 	public int getRe_ref() {
 		return re_ref;
 	}
@@ -96,12 +102,7 @@ public class QuestionBean {
 	public void setQuestion_date(Date board_date) {
 		this.question_date = board_date;
 	}
-	public String getQuestion_pass() {
-		return question_pass;
-	}
-	public void setQuestion_pass(String question_pass) {
-		this.question_pass = question_pass;
-	}
+	
 	
 	
 	

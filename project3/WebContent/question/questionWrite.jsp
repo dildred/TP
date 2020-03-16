@@ -53,6 +53,12 @@
 								<textarea rows="30" cols="10" id="comment" name="comment"></textarea>
 							</td>
 						</tr>
+						<tr>
+							<th>비밀번호</th>
+						<td>
+							<input type="text" id="passwd" name="passwd">
+						</td>
+					</tr>
 					</table>
 					<div class="writing_button">
 						<input class="button" id="writing_submit" type="submit" value="등록">

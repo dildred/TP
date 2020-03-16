@@ -23,12 +23,14 @@ public class QuestionModifyProAction implements Action{
 		String Email = request.getParameter("Email");
 		String title = request.getParameter("title");
 		String comment = request.getParameter("comment");
+		String passwd = request.getParameter("passwd");
 		
 		questionBean = new QuestionBean();
 		questionBean.setQuestion_num(num);
 		questionBean.setQuestion_Email(Email);
 		questionBean.setQuestion_title(title);
 		questionBean.setQuestion_comment(comment);
+		questionBean.setQuestion_pass(passwd);
 		
 		QuestionModifyService quesionService = new QuestionModifyService();
 		boolean isModifySuccess = quesionService.modifyArticle(questionBean);

@@ -42,6 +42,7 @@ $(function() {
 			$.question(fullurl,Info);
 			console.log("포스트에요5");
 			
+			
 		}
 		
 		
@@ -57,9 +58,13 @@ $(function() {
 			success: function(data) {
 			
 				var jsonInfo = JSON.parse(data);
+				console.log(jsonInfo);
 				var output = jsonInfo.result;
+				console.log(output);
 				if(output == "fail") alert("비밀번호가 다릅니다.");
 				if(output == "success"){
+					console.log(jsonInfo);
+					console.log(output);
 					alert('삭제 되었습니다.');
 					var fullurl = URL+"questionList.do";
 					window.location.href = fullurl;

@@ -85,7 +85,8 @@ public class QuestionFrontController extends javax.servlet.http.HttpServlet{
 				forward =action.execute(request, response);
 				System.out.println("forward");
 			} catch (Exception e) {
-				System.out.println("/questionDelete.do err : " +e);
+				System.out.println("/questionDelete.dddddo err : " +e);
+				e.printStackTrace();
 			}
 		}else if(command.equals("/questionReply.do")) {
 			action = new QuestionReplyAction();
