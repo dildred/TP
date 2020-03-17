@@ -1,0 +1,40 @@
+package svc.question;
+
+import static db.JdbcUtil.close;
+import static db.JdbcUtil.getConnection;
+
+import java.sql.Connection;
+
+import dao.QuestionDAO;
+
+import static db.JdbcUtil.*;
+
+public class QuestionDeleteService {
+
+	//게시글 비밀번호
+	
+		public String getPass(int num) {
+		
+				Connection con = getConnection();
+				QuestionDAO questionDAO = QuestionDAO.getInstance();
+				questionDAO.setConnection(con);
+				String passwd = questionDAO.getPass(num);
+				
+				close(con);
+				
+				return passwd;
+			}
+			
+	//게시글 삭제
+	
+		public void questionDelete(int num) {
+			
+			Connection con = getConnection();
+			QuestionDAO questionDAO =QuestionDAO.getInstance();
+			questionDAO.setConnection(con);
+			questionDAO.questionDelete(num);
+			
+			close(con);
+		}
+		
+}
