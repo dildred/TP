@@ -1,10 +1,10 @@
 $(function() {
 	// => http://localhost:8090
-	var URL = window.location.protocol+"//"+window.location.host;
+	var URL = window.location.protocol+"//"+window.location.host+"/project_0220_last/";
 
 	//페이지에 맞는 리스트 보기
 	$('.writing input').click(function() {
-		var fullurl = URL+"/project/declare/dwriting.jsp";
+		var fullurl = URL+"declare/dwriting.jsp";
 		
 		window.location.href = fullurl;
 	});
@@ -97,7 +97,7 @@ $(function() {
 		var td = tr.children();
 		var num = td.eq(0).text();
 		
-		var fullurl = URL+"/project/boardDeclaDetail.brd?num="+num;
+		var fullurl = URL+"boardDeclaDetail.brd?num="+num;
 		window.location.href = fullurl;
 	});
 	

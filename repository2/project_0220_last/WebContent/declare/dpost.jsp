@@ -11,6 +11,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/templated-intensify/assets/css/main.css">
 </head>
 <body>
+	<!-- JSP INCLUDE -->
+	<jsp:include page="../include/top.jsp"/>
+	
 	<article>
 	<div class="post_block">
 	<%if(declare.getDecla_re_lev() == 0){ %>
@@ -52,6 +55,10 @@
 		</div>
 	</div>
 </article>
+
+<!-- JSP INCLUDE -->
+<jsp:include page="../include/bottom.jsp"/>
+
 <script src="${pageContext.request.contextPath }/declare/js/jquery-3.4.1.min.js"></script>
 <script src="${pageContext.request.contextPath }/declare/js/dpost.js"></script>
 </body>

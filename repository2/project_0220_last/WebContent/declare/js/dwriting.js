@@ -1,5 +1,5 @@
 $(function() {
-	var URL = window.location.protocol+"//"+window.location.host;
+	var URL = window.location.protocol+"//"+window.location.host+"/project_0220_last/";
 	
 	//게시글 작성[유효성 체크]
 	$('#writing_submit').click(function() {

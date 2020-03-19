@@ -9,6 +9,9 @@
 </head>
 <body>
 
+	<!-- JSP INCLUDE -->
+	<jsp:include page="../include/top.jsp"/>
+	
 <article>
 	<div class="writing_wrap">
 		<div class="writing_input">
@@ -55,6 +58,11 @@
 		</div>
 	</div>
 </article>
+
+<!-- JSP INCLUDE -->
+<jsp:include page="../include/bottom.jsp"/>
+
+
 
 <script src="${pageContext.request.contextPath}/declare/js/jquery-3.4.1.min.js"></script>
 <script src="${pageContext.request.contextPath}/declare/js/dwriting.js"></script>

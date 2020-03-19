@@ -1,5 +1,5 @@
 $(function() {
-	var URL = window.location.protocol+"//"+window.location.host+"/project3/";
+	var URL = window.location.protocol+"//"+window.location.host+"/project_0220_last/";
 
 	//페이지에 맞는 리스트 보기
 	$('.writing input').click(function() {

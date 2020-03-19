@@ -1,5 +1,5 @@
 $(function() {
-	var URL = window.location.protocol+"//"+window.location.host;
+	var URL = window.location.protocol+"//"+window.location.host+"/project_0220_last/";
 	
 	$('.post_btn_block').on('click','input',function(){
 		
@@ -16,23 +16,23 @@ $(function() {
 		
 		if(button == '목록'){
 			
-			var fullurl = URL+"/project/dboardList.brd";
+			var fullurl = URL+"dboardList.brd";
 			window.location.href = fullurl;
 			
 		}else if(button == '답글'){
 			
-			var fullurl = URL+"/project/declare/dreply.jsp"+postdata;
+			var fullurl = URL+"declare/dreply.jsp"+postdata;
 			window.location.href = fullurl;
 			
 		}else if(button == '수정'){
 
-			var fullurl = URL+"project/boardDeclaModify.brd?decla_Num="+decla_Num;
+			var fullurl = URL+"boardDeclaModify.brd?decla_Num="+decla_Num;
 			window.location.href = fullurl;
 			
 		}else if(button == '삭제'){
 			
 			var input = prompt('자신의 이메일 주소를 입력하세요');
-			var fullurl = URL+"project/dboardDeclaDelete.brd?decla_Num="+decla_Num+"&input="+input;
+			var fullurl = URL+"dboardDeclaDelete.brd?decla_Num="+decla_Num+"&input="+input;
 			window.location.href = fullurl;
 		}
 	});

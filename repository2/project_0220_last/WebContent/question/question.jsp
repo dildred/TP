@@ -24,7 +24,7 @@
 		<ul>
 			<li><a href="${pageContext.request.contextPath}/questionList.do">고객센터</a></li>
 			<li><a href="${pageContext.request.contextPath}/questionWrite.do">1:1문의하기</a></li>
-			<li><a href="#">신고하기</a></li>
+			<li><a href="${pageContext.request.contextPath}/dboardList.brd">신고하기</a></li>
 			<li><a href="${pageContext.request.contextPath}/questionList.do">내 문의 내역</a></li>
 			<li><a href="#">내 신고 내역?</a></li>
 		</ul>
@@ -41,7 +41,7 @@
 		<thead> 
 			<tr>
 				<th align="center" class="num">번호</th>
-				<th align="right" class="title">제목</th>
+				<th align="center" class="title">제목</th>
 				<th align="center" class="Email">작성자</th>
 				<th align="center" class="date">작성일</th>
 			</tr>
@@ -51,7 +51,7 @@
 			<%for(int i = 0; i < articleList.size(); i++) {%>
 			<tr id="row">
 				<td align="center" class="num"><%=articleList.get(i).getQuestion_num()%></td>
-				<td align="center" class="title">
+				<td align="left" class="title">
 			<%if (articleList.get(i).getRe_lev() > 0) {%>
 				<%for (int j = 1; j < articleList.get(i).getRe_lev(); j++) { %>		
 					<img src="${pageContext.request.contextPath}/images/reply/blank.gif" alt="화살표이미지"> 
@@ -59,7 +59,7 @@
 					<img src="${pageContext.request.contextPath}/images/reply/arrow.png" alt="화살표이미지"> 
 					<%} %>
 					<%=articleList.get(i).getQuestion_title()%></td>
-				<td align="center" class="Email"><%=articleList.get(i).getQuestion_Email()%></td>
+				<td align="left" class="Email"><%=articleList.get(i).getQuestion_Email()%></td>
 				<td align="center" class="date"><%=articleList.get(i).getQuestion_date()%></td>
 			</tr>
 			<%}%>
