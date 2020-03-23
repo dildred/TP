@@ -49,15 +49,6 @@
 	
 <jsp:include page="/include/top.jsp"/>
 
-<div id="main_menu">
-	<ul>
-		<li><a href="#">홈</a></li>
-		<li><a href="#">소개</a></li>
-		<li><a href="#">경매</a></li>
-		<li><a href="${pageContext.request.contextPath}/questionList.do">고객센터</a></li>
-	</ul>
-</div>
-
 <!-- Banner -->
 <section class="banner full">
 	<article>

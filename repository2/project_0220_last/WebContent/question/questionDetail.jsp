@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>문의 상세</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/question/css/post.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/declare/css/dwriting.css">
 </head>
 <body>
 

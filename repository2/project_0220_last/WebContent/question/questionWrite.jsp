@@ -6,22 +6,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>inquiry 문의</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/question/css/inquiry.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/declare/css/dwriting.css">
 </head>
 <body>
 
 	<!-- JSP INCLUDE -->
 	<jsp:include page="../include/top.jsp"/>
 
-	<nav id="sub_menu">
-		<ul>
-			<li><a href="${pageContext.request.contextPath}/questionList.do">고객센터</a></li>
-			<li><a href="${pageContext.request.contextPath}/questionWrite.do">1:1문의하기</a></li>
-			<li><a href="#">신고하기</a></li>
-			<li><a href="${pageContext.request.contextPath}/questionList.do">내 문의 내역</a></li>
-			<li><a href="#">내 신고 내역?</a></li>
-		</ul>
-	</nav>
+
 	<article>
 		<div class="writing_wrap">
 			<div class="writing_input">

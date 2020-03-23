@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>service center</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath }/question/css/question.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/question/css/main.css">
 </head>
 <body>
 
@@ -20,15 +20,6 @@
 	<article>
 		<h1 align="center" style="font-size: 45px;">무엇을 도와 드릴까요?</h1>
 	
-	<nav id="sub_menu">
-		<ul>
-			<li><a href="${pageContext.request.contextPath}/questionList.do">고객센터</a></li>
-			<li><a href="${pageContext.request.contextPath}/questionWrite.do">1:1문의하기</a></li>
-			<li><a href="${pageContext.request.contextPath}/dboardList.brd">신고하기</a></li>
-			<li><a href="${pageContext.request.contextPath}/questionList.do">내 문의 내역</a></li>
-			<li><a href="#">내 신고 내역?</a></li>
-		</ul>
-	</nav>
 	<div class="count_search_block">
 		<div class="count">
 		<%if(pageInfo != null){ %>

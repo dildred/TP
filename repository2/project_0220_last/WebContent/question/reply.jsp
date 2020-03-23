@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>writing</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/question/css/writing.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/declare/css/dwriting.css">ss">
 </head>
 <body>
 

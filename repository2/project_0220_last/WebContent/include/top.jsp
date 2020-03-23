@@ -53,8 +53,8 @@
 		<li id="m2"><a href="elements.html">Report & Inquiry</a></li>
 		<div id="hover_menu1">
 			<ul id="hm1">
-				<li class="inner"><a href="#">Report</a></li>
-				<li class="inner"><a href="#">Inquire</a></li>
+				<li class="inner"><a href="${pageContext.request.contextPath}/dboardList.brd">Report</a></li>
+				<li class="inner"><a href="${pageContext.request.contextPath}/questionList.do">Inquire</a></li>
 			</ul>
 		</div>
 	</ul>
