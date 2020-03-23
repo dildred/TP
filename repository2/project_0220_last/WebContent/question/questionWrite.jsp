@@ -27,7 +27,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th scope="row">상담분류</th>
+<!-- 							<th scope="row">상담분류</th>
 							 <td>
 								<select style="width:280px; height:30px" title="문의분야 선택" class="select_st">
 									<option value="">계정 관련</option>
@@ -35,7 +35,7 @@
 									<option value="">?</option>
 									<option value="">!</option>
 								</select>
-							</td> 
+							</td>  -->
 						</tr>
 						<tr>
 							<th>문의제목</th>
